@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>PersonalProject</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MBMetrics</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-home" href='/'>
+<!--         <%if !current_user.nil? %>
+  <%if current_user.display_name %>
+    Welcome <%= current_user.display_name%>
+  <% else %>
+    Welcome <%= current_user.full_name %>
+  <% end %>
+<% else %> -->
+        Welcome to MBMetrics
+    <!--   <% end %> --></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/menu"><span class="sr-only"></span></a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/words">Words</a></li>
+        <li><a href="/API">API</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">The 16 Different Types<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <div class="container">
+            <div id="categories_sidebar">
+              Types here
+          <!--     <% Types.all.each do |type| %>
+            <li> <%= link_to type.title, type_path(type) %> </li>
+          <% end %> -->
+            </div>
+          </div>
+        </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        Login
+<!--         <% if current_user %>
+  <li><%= link_to "Your Profile", user_path(:profile)%></li>
+  <li><%= link_to "Logout", logout_path %></li>
+  <% else %>
+  <li><%= link_to "User Login", login_path %></li>
+<% end %> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class='flash' role="alert">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+  </div>
 
 <%= yield %>
 
 </body>
+
 </html>

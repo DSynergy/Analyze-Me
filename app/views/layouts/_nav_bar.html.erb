@@ -1,0 +1,55 @@
+
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"><a href="javascript:void(0)">Background</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">About</a></li>
+        <li class="nav-link more"><a href="javascript:void(0)">The APIs</a>
+          <ul class="submenu">
+            <li><a href="javascript:void(0)">The Typealyzer</a></li>
+            <li><a href="javascript:void(0)">The Hedonometer</a></li>
+          </ul>
+        <li class="nav-link"><a href="javascript:void(0)">The 16 types</a></li>
+        <li class="nav-link more"><a href="javascript:void(0)">The Types Indepth</a>
+          <ul class="submenu">
+            <li><a href="javascript:void(0)">ISTJ - The Pragmatist</a></li>
+            <li><a href="javascript:void(0)">ISFJ - The Nurturer/The Defender</a></li>
+            <li><a href="javascript:void(0)">INFJ - The Counselor/The Protector</a></li>
+            <li><a href="javascript:void(0)">INTJ - The Mastermind/The Strategist</a></li>
+            <li><a href="javascript:void(0)">ISTP - The Mechanic/The Craftsman</a></li>
+            <li><a href="javascript:void(0)">ISFP - The Peacemaker/The Artist</a></li>
+            <li><a href="javascript:void(0)">INFP - The Romantic/The Idealist</a></li>
+            <li><a href="javascript:void(0)">INTP - The Thinker/The Architect</a></li>
+            <li><a href="javascript:void(0)">ESTP - The Promoter/The Doer</a></li>
+            <li><a href="javascript:void(0)">ESFP - The Performer/The Artist</a></li>
+            <li><a href="javascript:void(0)">ENFP - The Inspirer/The Reporter</a></li>
+            <li><a href="javascript:void(0)">ENTP - The Visionary/The Inventor</a></li>
+            <li><a href="javascript:void(0)">ESTJ - The Supervisor/The Director</a></li>
+            <li><a href="javascript:void(0)">ESFJ - The Caregiver/The Enthusiast</a></li>
+            <li><a href="javascript:void(0)">ENFJ - The Giver/The Teacher</a></li>
+            <li><a href="javascript:void(0)">ENTJ - The Executive/The Pioneer</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="navigation-tools">
+      <div class="search-bar">
+        <div class='dynamic_search' data-search="<#%= { types }.to_json %>">
+          <%= form_tag('#', :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "types", class: "typeahead"%>
+            <button type="submit">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+            </button>
+          <% end %>
+        </div>
+      </div>
+      <a href="javascript:void(0)" class="sign-up">Your Profile</a>
+    </div>
+  </div>
+</header>

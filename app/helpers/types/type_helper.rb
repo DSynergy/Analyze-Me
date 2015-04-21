@@ -1,0 +1,2 @@
+module Types::TypeHelper
+end

@@ -1,10 +1,36 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  match ':status', to: 'errors#show', via: :all, constraints: {status: /\d{3}/ }
 
-  root 'dashboard#index'
+  namespace :types do
+    get 'type', to: "type#index"
+    get 'ESTP', to: 'type#ESTP '
+    get 'ESFP', to: 'type#ESFP '
+    get 'ENFP', to: 'type#ENFP '
+    get 'ENTP', to: 'type#ENTP '
+    get 'ESTJ', to: 'type#ESTJ '
+    get 'ESFJ', to: 'type#ESFJ '
+    get 'ENFJ', to: 'type#ENFJ '
+    get 'ENTJ', to: 'type#ENTJ '
+    get 'INTJ', to: 'type#INTJ '
+    get 'INFJ', to: 'type#INFJ '
+    get 'ISTJ', to: 'type#ISTJ '
+    get 'ISFJ', to: 'type#ISFJ '
+    get 'INFP', to: 'type#INFP '
+    get 'INTP', to: 'type#INTP '
+    get 'ISTP', to: 'type#ISTP '
+    get 'ISFP', to: 'type#ISFP '
+  end
+
+
+  root 'staticpages#dashboard'
   get 'auth/:provider/callback', to: 'sessions#create'
-  resources :type
+  get 'about',      to: 'staticpages#about'
+  get 'background', to: 'staticpages#background'
+  get 'hedonmeter', to: 'staticpages#hedonmeter'
+  get 'dashboard',  to: 'staticpages#dashboard'
+  get 'typealyzer', to: 'staticpages#typealyzer'
+
+
 
 
   # Example of regular route:
@@ -16,17 +42,6 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
 
   # Example resource route with sub-resources:
   #   resources :products do

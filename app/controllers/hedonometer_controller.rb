@@ -1,2 +1,0 @@
-class HedonometerController < ApplicationController
-end

@@ -1,37 +1,37 @@
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <a href="/" class="logo">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+      <%= image_tag("logo.png") %>
     </a>
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link"><a href="javascript:void(0)">Background</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About</a></li>
-        <li class="nav-link more"><a href="javascript:void(0)">The APIs</a>
+        <li class="nav-link"><a href="background">Background</a></li>
+        <li class="nav-link"><a href="about">About</a></li>
+        <li class="nav-link more"><a href="#">The APIs</a>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">The Typealyzer</a></li>
-            <li><a href="javascript:void(0)">The Hedonometer</a></li>
+            <li><a href="Typealyzer">The Typealyzer</a></li>
+            <li><a href="Hedonometer">The Hedonometer</a></li>
           </ul>
-        <li class="nav-link"><a href="javascript:void(0)">The 16 types</a></li>
-        <li class="nav-link more"><a href="javascript:void(0)">The Types Indepth</a>
+        <li class="nav-link"><a href="types/type">The 16 types</a></li>
+        <li class="nav-link more"><a href="#">The Types Indepth</a>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">ESTP-The Promoter</a></li>
-            <li><a href="javascript:void(0)">ESFP-The Performer</a></li>
-            <li><a href="javascript:void(0)">ENFP-The Inspirer</a></li>
-            <li><a href="javascript:void(0)">ENTP-The Visionary</a></li>
-            <li><a href="javascript:void(0)">ESTJ-The Supervisor</a></li>
-            <li><a href="javascript:void(0)">ESFJ-The Caregiver</a></li>
-            <li><a href="javascript:void(0)">ENFJ-The Giver</a></li>
-            <li><a href="javascript:void(0)">ENTJ-The Executive</a></li>
-            <li><a href="javascript:void(0)">INTJ-The Mastermind</a></li>
-            <li><a href="javascript:void(0)">INFJ-The Counselor</a></li>
-            <li><a href="javascript:void(0)">ISTJ-The Pragmatist</a></li>
-            <li><a href="javascript:void(0)">ISFJ-The Nurturer</a></li>
-            <li><a href="javascript:void(0)">INFP-The Romantic</a></li>
-            <li><a href="javascript:void(0)">INTP-The Thinker</a></li>
-            <li><a href="javascript:void(0)">ISTP-The Mechanic</a></li>
-            <li><a href="javascript:void(0)">ISFP-The Peacemaker</a></li>
+            <li><%= link_to "ESTP-The Promoter",  types_ESTP_path %> </a></li>
+            <li><%= link_to "ESFP-The Performer", types_ESFP_path %> </a></li>
+            <li><%= link_to "ENFP-The Inspirer",  types_ENFP_path %> </a></li>
+            <li><%= link_to "ENTP-The Visionary", types_ENTP_path %> </a></li>
+            <li><%= link_to "ESTJ-The Supervisor",types_ESTJ_path %> </a></li>
+            <li><%= link_to "ESFJ-The Caregiver", types_ESFJ_path %> </a></li>
+            <li><%= link_to "ENFJ-The Giver",     types_ENFJ_path %> </a></li>
+            <li><%= link_to "ENTJ-The Executive", types_ENTJ_path %> </a></li>
+            <li><%= link_to "INTJ-The Mastermind",types_INTJ_path %> </a></li>
+            <li><%= link_to "INFJ-The Counselor", types_INFJ_path %> </a></li>
+            <li><%= link_to "ISTJ-The Pragmatist",types_ISTJ_path %> </a></li>
+            <li><%= link_to "ISFJ-The Nurturer",  types_ISFJ_path %> </a></li>
+            <li><%= link_to "INFP-The Romantic",  types_INFP_path %> </a></li>
+            <li><%= link_to "INTP-The Thinker",   types_INTP_path %> </a></li>
+            <li><%= link_to "ISTP-The Mechanic",  types_ISTP_path %> </a></li>
+            <li><%= link_to "ISFP-The Peacemaker",types_ISFP_path %> </a></li>
           </ul>
         </li>
       </ul>

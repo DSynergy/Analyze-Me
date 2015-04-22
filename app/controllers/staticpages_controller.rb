@@ -3,7 +3,7 @@ class StaticpagesController < ApplicationController
   def about
   end
 
-  def hedonmeter
+  def hedonometer
   end
 
   def background

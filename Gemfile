@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'koala'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 # Use SCSS for stylesheets

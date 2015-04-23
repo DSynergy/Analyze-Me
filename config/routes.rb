@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root 'staticpages#dashboard'
   match ':status', to: 'errors#show', via: :all, constraints: {status: /\d{3}/ }
   get 'auth/:provider/callback', to: 'sessions#create'
+  post 'logout',                 to: 'sessions#destroy'
 
   namespace :types do
     get 'type', to: "type#index"
@@ -22,17 +24,14 @@ Rails.application.routes.draw do
     get 'ISFP', to: 'type#ISFP'
   end
 
-
-  root 'staticpages#dashboard'
-  get 'auth/:provider/callback', to: 'sessions#create'
-  post 'logout', to: 'sessions#destroy'
-  get 'about',      to: 'staticpages#about'
-  get 'background', to: 'staticpages#background'
-  get 'hedonometer', to: 'staticpages#hedonometer'
-  get 'dashboard',  to: 'staticpages#dashboard'
-  get 'typealyzer', to: 'staticpages#typealyzer'
-
   resources :user, only: [:show]
+
+  get 'about',                   to: 'staticpages#about'
+  get 'background',              to: 'staticpages#background'
+  get 'hedonometer',             to: 'staticpages#hedonometer'
+  get 'dashboard',               to: 'staticpages#dashboard'
+  get 'typealyzer',              to: 'staticpages#typealyzer'
+  get 'me',                      to: "staticpages#me"
 
 
   # Example of regular route:

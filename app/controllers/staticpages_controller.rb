@@ -15,4 +15,7 @@ class StaticpagesController < ApplicationController
   def typealyzer
   end
 
+  def me
+  end
+
 end

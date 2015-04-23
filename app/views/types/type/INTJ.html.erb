@@ -1,13 +1,22 @@
-THIS WILL SHOW EACH TYPE
-
 <div class="side-image">
   <div class="images-wrapper"></div>
     <div class="side-image-content">
-      <h4>The Catchphrase</h4>
-      <h1>The Individual Type</h1>
-      <p>The description</p>
+      <h4><%=@personality.catchphrase%></h4>
+      <h1><%=@personality.type%></h1>
+      <h5>Jungian functional preferences</h5>
+      <ul>
+        <li>Dominant: Introverted Intuition</li>
+        <li>Auxiliary: Extraverted Thinking</li>
+        <li>Tertiary: Introverted Feeling</li>
+        <li>Inferior: Extraverted Sensing</li>
+      </ul>
+      <p><%=@personality.full_description%></p>
       <p>Famous people of this type:</p>
       <p>Average happiness index</p>
     </div>
   </div>
 </div>
+
+
+<hr>
+<footer>Excerpted from Introduction to Type® by Isabel Briggs Myers published by CPP. Inc.</footer>

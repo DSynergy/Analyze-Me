@@ -3,7 +3,7 @@ class Types::TypeController < ApplicationController
   def index
   end
 
-  def ESTP
+  def estp
   end
 
   def ESFP
@@ -17,7 +17,7 @@ class Types::TypeController < ApplicationController
 
   def ESTJ
   end
-  
+
   def ESFJ
   end
 

@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.0)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -83,6 +84,10 @@ GEM
     json (1.8.2)
     jwt (1.4.1)
     kgio (2.9.3)
+    koala (2.0.0)
+      addressable
+      faraday
+      multi_json
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -108,6 +113,8 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
@@ -200,7 +207,9 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  koala
   neat
+  omniauth-facebook
   omniauth-github
   pg
   pry

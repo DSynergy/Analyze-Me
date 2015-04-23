@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'koala'
+gem 'omniauth-facebook'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 # Use SCSS for stylesheets

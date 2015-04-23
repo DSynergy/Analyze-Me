@@ -28,35 +28,13 @@
     padding: 3.5em;
     text-align: center;
 
-    .hero-copy {
-      text-align: center;
 
-      h1 {
-        font-size: 1.6em;
-        margin-bottom: 0.5em;
 
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
-      }
-
-      p {
-        font-weight: 200;
-        line-height: 1.4em;
-        margin: 0 auto 3em auto;
-
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
-        }
-      }
-    }
-
-    button {
-      @include button(flat, $action-color);
-      padding: 0.7em 1em;
-    }
   }
+}
+
+.dash-button{
+  color: white
 }
 
 /* Image overlay */
@@ -91,9 +69,33 @@
     margin: auto;
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 40%;
     z-index: 999;
 
+    .hero-copy {
+      text-align: center;
+
+      h1 {
+        font-style: italic;
+        font-size: 10em;
+        margin-bottom: 0.5em;
+
+        @include media($large-screen) {
+          font-size: 10em;
+        }
+      }
+
+      p {
+        font-weight: 200;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto;
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
     p {
       color: white;
       font-weight: 800;

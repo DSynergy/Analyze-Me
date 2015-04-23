@@ -1,36 +1,38 @@
 Rails.application.routes.draw do
   match ':status', to: 'errors#show', via: :all, constraints: {status: /\d{3}/ }
+  get 'auth/:provider/callback', to: 'sessions#create'
 
   namespace :types do
     get 'type', to: "type#index"
-    get 'ESTP', to: 'type#ESTP '
-    get 'ESFP', to: 'type#ESFP '
-    get 'ENFP', to: 'type#ENFP '
-    get 'ENTP', to: 'type#ENTP '
-    get 'ESTJ', to: 'type#ESTJ '
-    get 'ESFJ', to: 'type#ESFJ '
-    get 'ENFJ', to: 'type#ENFJ '
-    get 'ENTJ', to: 'type#ENTJ '
-    get 'INTJ', to: 'type#INTJ '
-    get 'INFJ', to: 'type#INFJ '
-    get 'ISTJ', to: 'type#ISTJ '
-    get 'ISFJ', to: 'type#ISFJ '
-    get 'INFP', to: 'type#INFP '
-    get 'INTP', to: 'type#INTP '
-    get 'ISTP', to: 'type#ISTP '
-    get 'ISFP', to: 'type#ISFP '
+    get 'ESTP', to: 'type#ESTP'
+    get 'ESFP', to: 'type#ESFP'
+    get 'ENFP', to: 'type#ENFP'
+    get 'ENTP', to: 'type#ENTP'
+    get 'ESTJ', to: 'type#ESTJ'
+    get 'ESFJ', to: 'type#ESFJ'
+    get 'ENFJ', to: 'type#ENFJ'
+    get 'ENTJ', to: 'type#ENTJ'
+    get 'INTJ', to: 'type#INTJ'
+    get 'INFJ', to: 'type#INFJ'
+    get 'ISTJ', to: 'type#ISTJ'
+    get 'ISFJ', to: 'type#ISFJ'
+    get 'INFP', to: 'type#INFP'
+    get 'INTP', to: 'type#INTP'
+    get 'ISTP', to: 'type#ISTP'
+    get 'ISFP', to: 'type#ISFP'
   end
 
 
   root 'staticpages#dashboard'
   get 'auth/:provider/callback', to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy'
   get 'about',      to: 'staticpages#about'
   get 'background', to: 'staticpages#background'
-  get 'hedonmeter', to: 'staticpages#hedonmeter'
+  get 'hedonometer', to: 'staticpages#hedonometer'
   get 'dashboard',  to: 'staticpages#dashboard'
   get 'typealyzer', to: 'staticpages#typealyzer'
 
-
+  resources :user, only: [:show]
 
 
   # Example of regular route:

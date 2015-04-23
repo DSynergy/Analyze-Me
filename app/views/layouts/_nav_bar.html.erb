@@ -48,7 +48,12 @@
           <% end %>
         </div>
       </div>
-      <a href="javascript:void(0)" class="sign-up">Your Profile</a>
+      <% if current_user %>
+        <%= link_to "Your Profile", user_path(current_user.id), class: "sign-up" %>
+        <%= link_to "Log Out", logout_path, method: :destroy, class: "sign-up" %>
+      <% else %>
+        <%= link_to "Sign up with Facebook", "auth/facebook", class: "sign-up" %>
+      <% end %>
     </div>
   </div>
 </header>

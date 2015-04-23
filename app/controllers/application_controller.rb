@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
   # def set_name(user)
   #   user.display_name ? user.display_name : user.username
   # end
-  #
-  # def current_user
-  #   @current_user ||= User.find_by(id: session[:user_id])
-  # end
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
 
 end

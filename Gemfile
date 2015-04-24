@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'koala'
 gem 'omniauth-facebook'
+gem 'faraday'
 
 gem 'rails', '4.2.0'
 gem 'pg'

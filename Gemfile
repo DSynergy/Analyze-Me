@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'koala'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'faraday'
 
 gem 'rails', '4.2.0'
@@ -30,6 +31,7 @@ gem 'figaro'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'

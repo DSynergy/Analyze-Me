@@ -26,12 +26,13 @@ Rails.application.routes.draw do
 
   resources :user, only: [:show]
 
-  get 'about',                   to: 'staticpages#about'
-  get 'background',              to: 'staticpages#background'
-  get 'hedonometer',             to: 'staticpages#hedonometer'
-  get 'dashboard',               to: 'staticpages#dashboard'
-  get 'typealyzer',              to: 'staticpages#typealyzer'
-  get 'me',                      to: "staticpages#me"
+  get 'about',               to: 'staticpages#about'
+  get 'background',          to: 'staticpages#background'
+  get 'hedonometer',         to: 'staticpages#hedonometer'
+  get 'dashboard',           to: 'staticpages#dashboard'
+  get 'typealyzer',          to: 'staticpages#typealyzer'
+  get 'me',                  to: "staticpages#me"
+  get 'privacy',             to: "staticpages#privacy"
 
 
   # Example of regular route:

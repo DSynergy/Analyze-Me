@@ -18,4 +18,7 @@ class StaticpagesController < ApplicationController
   def me
   end
 
+  def privacy
+  end
+
 end

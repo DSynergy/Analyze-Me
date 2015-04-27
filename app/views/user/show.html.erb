@@ -1,3 +1,32 @@
-THIS IS YOUR HOMEPAGE BRAH
+<div class="side-image">
+  <div class="images-wrapper"></div>
+    <div class="side-image-content">
 
-Take the myers-briggs test here!
+      <h4><%=image_tag(@user.image) %> Welcome <%=@user.name%> - <%= @user.nickname %></h4>
+
+      <% if @user.type %>
+        <h1>Your type is <%=@user.type%></h1>
+      <% end %>
+    </br>
+      Here goes a button to sign in with other provider
+    </br>
+      Here goes a button to analzye me from posts --> api request
+    </br>
+    </br>
+
+      <h4>About</h4>
+      <p><%= @user.description %></p>
+
+      <h5>Your Jungian functional preferences</h5>
+      <ul>
+        <li>Dominant: Extraverted Feeling	</li>
+        <li>Auxiliary: Introverted Intuition </li>
+        <li>Tertiary: Extraverted Sensing	</li>
+        <li>Inferior: Introverted Thinking </li>
+      </ul>
+      </br>
+      <h5>Famous people of this type</h5>
+      <h5>Average happiness index</h5>
+    </div>
+  </div>
+</div>

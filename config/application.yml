@@ -10,6 +10,19 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-
+development:
   facebook_key: "946718772025192"
   facebook_secret: "0d48a0ed5e6fe78d704c4506418664ef"
+
+  twitter_key: "raFCAjO939AAGOEWaEOSp6U6l"
+  twitter_secret: "dzlVcZriqX6tO5YLM6Y5MZkctAYbW9iyXL4jLUwMlpR67DMFQU"
+
+production:
+
+  facebook_key: ""
+  facebook_secret: ""
+
+  twitter_key: ""
+  twitter_secret: ""
+
+  

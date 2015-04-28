@@ -1,4 +1,3 @@
-
 class MBClassifier
   def initialize
     @connection = Faraday.new(:url => "http://uclassify.com/") do |faraday|

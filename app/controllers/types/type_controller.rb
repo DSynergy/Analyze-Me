@@ -4,67 +4,67 @@ class Types::TypeController < ApplicationController
   end
 
   def ESTP
-    @personality = Personality.find(type: 'ESTP')
+    @personality = Personality.find_by(:MBPT => 'ESTP')
   end
 
   def ESFP
-    @personality = Personality.find(type: 'ESFP')
+    @personality = Personality.find_by(:MBPT => 'ESFP')
   end
 
   def ENFP
-    @personality = Personality.find(type: 'ENFP')
+    @personality = Personality.find_by(:MBPT => 'ENFP')
   end
 
   def ENTP
-    @personality = Personality.find(type: 'ENTP')
+    @personality = Personality.find_by(:MBPT => 'ENTP')
   end
 
   def ESTJ
-    @personality = Personality.find(type: 'ESTJ')
+    @personality = Personality.find_by(:MBPT => 'ESTJ')
   end
 
   def ESFJ
-    @personality = Personality.find(type: 'ESFJ')
+    @personality = Personality.find_by(:MBPT => 'ESFJ')
   end
 
   def ENFJ
-    @personality = Personality.find(type: 'ENFJ')
+    @personality = Personality.find_by(:MBPT => 'ENFJ')
   end
 
   def ENTJ
-    @personality = Personality.find(type: 'ENTJ')
+    @personality = Personality.find_by(:MBPT => 'ENTJ')
   end
 
   def INTJ
-    @personality = Personality.find(type: 'INTJ')
+    @personality = Personality.find_by(:MBPT => 'INTJ')
   end
 
   def INFJ
-    @personality = Personality.find(type: 'INFJ')
+    @personality = Personality.find_by(:MBPT => 'INFJ')
   end
 
   def ISTJ
-    @personality = Personality.find(type: 'ISTJ')
+    @personality = Personality.find_by(:MBPT => 'ISTJ')
   end
 
   def ISFJ
-    @personality = Personality.find(type: 'ISFJ')
+    @personality = Personality.find_by(:MBPT => 'ISFJ')
   end
 
   def INFP
-    @personality = Personality.find(type: 'INFP')
+    @personality = Personality.find_by(:MBPT => 'INFP')
   end
 
   def INTP
-    @personality = Personality.find(type: 'INTP')
+    @personality = Personality.find_by(:MBPT => 'INTP')
   end
 
   def ISTP
-    @personality = Personality.find(type: 'ISTP')
+    @personality = Personality.find_by(:MBPT => 'ISTP')
   end
 
   def ISFP
-    @personality = Personality.find(type: 'ISFP')
+    @personality = Personality.find_by(:MBPT => 'ISFP')
   end
 
 end

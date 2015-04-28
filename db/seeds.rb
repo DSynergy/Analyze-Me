@@ -1,8 +1,12 @@
 class Seed
 
+  def call
+    create_types
+  end
+
   def create_types
 
-    Personality.create(type: 'ENFJ',
+    Personality.create(MBPT: 'ENFJ',
                        full_description: "As an ENFJ, you're primary mode of living is focused externally, where you deal with things according to how you feel about them, or how they fit into your personal value system. Your secondary mode is internal, where you take things in primarily via your intuition.\n
                                         ENFJs are people-focused individuals. They live in the world of people possibilities. More so than any other type, they have excellent people skills. They understand and care about people, and have a special talent for bringing out the best in others. ENFJ's main interest in life is giving love, support, and a good time to other people. They are focused on understanding, supporting, and encouraging others. They make things happen for people, and get their best personal satisfaction from this.\n
                                         Because ENFJ's people skills are so extraordinary, they have the ability to make people do exactly what they want them to do. They get under people's skins and get the reactions that they are seeking. ENFJ's motives are usually unselfish, but ENFJs who have developed less than ideally have been known to use their power over people to manipulate them.\n
@@ -21,7 +25,7 @@ class Seed
                       short_description: "Warm, empathetic, responsive, and responsible. Highly attuned to the emotions, needs, and motivations of others. Find potential in everyone, want to help others fulfill their potential. May act as catalysts for individual and group growth. Loyal, responsive to praise and criticism. Sociable, facilitate others in a group, and provide inspiring leadership.",
                       catchphrase: "The Giver/The Teacher")
 
-    Personality.create(type: 'ENFP',
+    Personality.create(MBPT: 'ENFP',
                       full_description: "As an ENFP, your primary mode of living is focused externally, where you take things in primarily via your intuition. Your secondary mode is internal, where you deal with things according to how you feel about them, or how they fit in with your personal value system.\n
                                         ENFPs are warm, enthusiastic people, typically very bright and full of potential. They live in the world of possibilities, and can become very passionate and excited about things. Their enthusiasm lends them the ability to inspire and motivate others, more so than we see in other types. They can talk their way in or out of anything. They love life, seeing it as a special gift, and strive to make the most out of it.\n
                                         ENFPs have an unusually broad range of skills and talents. They are good at most things which interest them. Project-oriented, they may go through several different careers during their lifetime. To onlookers, the ENFP may seem directionless and without purpose, but ENFPs are actually quite consistent, in that they have a strong sense of values which they live with throughout their lives. Everything that they do must be in line with their values. An ENFP needs to feel that they are living their lives as their true Self, walking in step with what they believe is right. They see meaning in everything, and are on a continuous quest to adapt their lives and values to achieve inner peace. They're constantly aware and somewhat fearful of losing touch with themselves. Since emotional excitement is usually an important part of the ENFP's life, and because they are focused on keeping 'centered', the ENFP is usually an intense individual, with highly evolved values.\n
@@ -38,7 +42,7 @@ class Seed
                       short_description: "Warmly enthusiastic and imaginative. See life as full of possibilities. Make connections between events and information very quickly, and confidently proceed based on the patterns they see. Want a lot of affirmation from others, and readily give appreciation and support. Spontaneous and flexible, often rely on their ability to improvise and their verbal fluency.",
                       catchphrase: "The Inspirer/The Reporter" )
 
-    Personality.create(type: 'INTJ',
+    Personality.create(MBPT: 'INTJ',
                       full_description: "As an INTJ, your primary mode of living is focused internally, where you take things in primarily via your intuition. Your secondary mode is external, where you deal with things rationally and logically.\n
                                         INTJs live in the world of ideas and strategic planning. They value intelligence, knowledge, and competence, and typically have high standards in these regards, which they continuously strive to fulfill. To a somewhat lesser extent, they have similar expectations of others.\n
                                         With Introverted Intuition dominating their personality, INTJs focus their energy on observing the world, and generating ideas and possibilities. Their mind constantly gathers information and makes associations about it. They are tremendously insightful and usually are very quick to understand new ideas. However, their primary interest is not understanding a concept, but rather applying that concept in a useful way. Unlike the INTP, they do not follow an idea as far as they possibly can, seeking only to understand it fully. INTJs are driven to come to conclusions about ideas. Their need for closure and organization usually requires that they take some action.\n
@@ -54,7 +58,7 @@ class Seed
                       short_description: "Have original minds and great drive for implementing their ideas and achieving their goals. Quickly see patterns in external events and develop long-range explanatory perspectives. When committed, organize a job and carry it through. Skeptical and independent, have high standards of competence and performance - for themselves and others.",
                       catchphrase: "The Mastermind/The Strategist")
 
-    Personality.create(type: 'INFJ',
+    Personality.create(MBPT: 'INFJ',
                       full_description:"As an INFJ, your primary mode of living is focused internally, where you take things in primarily via intuition. Your secondary mode is external, where you deal with things according to how you feel about them, or how they fit with your personal value system.\n
                                         INFJs are gentle, caring, complex and highly intuitive individuals. Artistic and creative, they live in a world of hidden meanings and possibilities. Only one percent of the population has an INFJ Personality Type, making it the most rare of all the types.\n
                                         INFJs place great importance on havings things orderly and systematic in their outer world. They put a lot of energy into identifying the best system for getting things done, and constantly define and re-define the priorities in their lives. On the other hand, INFJs operate within themselves on an intuitive basis which is entirely spontaneous. They know things intuitively, without being able to pinpoint why, and without detailed knowledge of the subject at hand. They are usually right, and they usually know it. Consequently, INFJs put a tremendous amount of faith into their instincts and intuitions. This is something of a conflict between the inner and outer worlds, and may result in the INFJ not being as organized as other Judging types tend to be. Or we may see some signs of disarray in an otherwise orderly tendency, such as a consistently messy desk.\n
@@ -67,7 +71,7 @@ class Seed
                       short_description: "Seek meaning and connection in ideas, relationships, and material possessions. Want to understand what motivates people and are insightful about others. Conscientious and committed to their firm values. Develop a clear vision about how best to serve the common good. Organized and decisive in implementing their vision.",
                       catchphrase: "The Counselor/The Protector")
 
-    Personality.create(type: 'ISTJ',
+    Personality.create(MBPT: 'ISTJ',
                       full_description: "As an ISTJ, your primary mode of living is focused internally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is external, where you deal with things rationally and logically.\n
                                         ISTJs are quiet and reserved individuals who are interested in security and peaceful living. They have a strongly-felt internal sense of duty, which lends them a serious air and the motivation to follow through on tasks. Organized and methodical in their approach, they can generally succeed at any task which they undertake.\n
                                         ISTJs are very loyal, faithful, and dependable. They place great importance on honesty and integrity. They are 'good citizens' who can be depended on to do the right thing for their families and communities. While they generally take things very seriously, they also usually have an offbeat sense of humor and can be a lot of fun - especially at family or work-related gatherings.\n
@@ -85,7 +89,7 @@ class Seed
                       short_description: "Quiet, serious, earn success by thoroughness and dependability. Practical, matter-of-fact, realistic, and responsible. Decide logically what should be done and work toward it steadily, regardless of distractions. Take pleasure in making everything orderly and organized - their work, their home, their life. Value traditions and loyalty.",
                       catchphrase: "The Pragmatist/The Duty Fulfiller")
 
-    Personality.create(type: "ISFJ",
+    Personality.create(MBPT: "ISFJ",
                       full_description: "As an ISFJ, your primary mode of living is focused internally, where you takes things in via your five senses in a literal, concrete fashion. Your secondary mode is external, where you deal with things according to how you feel about them, or how they fit into your personal value system.\n
                                         ISFJs live in a world that is concrete and kind. They are truly warm and kind-hearted, and want to believe the best of people. They value harmony and cooperation, and are likely to be very sensitive to other people's feelings. People value the ISFJ for their consideration and awareness, and their ability to bring out the best in others by their firm desire to believe the best.\n
                                         ISFJs have a rich inner world that is not usually obvious to observers. They constantly take in information about people and situations that is personally important to them, and store it away. This tremendous store of information is usually startlingly accurate, because the ISFJ has an exceptional memory about things that are important to their value systems. It would not be uncommon for the ISFJ to remember a particular facial expression or conversation in precise detail years after the event occured, if the situation made an impression on the ISFJ.\n
@@ -100,7 +104,7 @@ class Seed
                       short_description: "Quiet, friendly, responsible, and conscientious. Committed and steady in meeting their obligations. Thorough, painstaking, and accurate. Loyal, considerate, notice and remember specifics about people who are important to them, concerned with how others feel. Strive to create an orderly and harmonious environment at work and at home.",
                       catchphrase: "ISFJ - The Nurturer/The Defender")
 
-    Personality.create(type: "ISTP",
+    Personality.create(MBPT: "ISTP",
                       full_description: "As an ISTP, your primary mode of living is focused internally, where you deal with things rationally and logically. Your secondary mode is external, where you take things in via your five senses in a literal, concrete fashion.\n
                                         ISTPs have a compelling drive to understand the way things work. They're good at logical analysis, and like to use it on practical concerns. They typically have strong powers of reasoning, although they're not interested in theories or concepts unless they can see a practical application. They like to take things apart and see the way they work.\n
                                         ISTPs have an adventuresome spirit. They are attracted to motorcycles, airplanes, sky diving, surfing, etc. They thrive on action, and are usually fearless. ISTPs are fiercely independent, needing to have the space to make their own decisions about their next step. They do not believe in or follow rules and regulations, as this would prohibit their ability to 'do their own thing'. Their sense of adventure and desire for constant action makes ISTPs prone to becoming bored rather quickly.\n
@@ -115,7 +119,7 @@ class Seed
                       short_description: "Tolerant and flexible, quiet observers until a problem appears, then act quickly to find workable solutions. Analyze what makes things work and readily get through large amounts of data to isolate the core of practical problems. Interested in cause and effect, organize facts using logical principles, value efficiency.",
                       catchphrase: "The Mechanic/The Craftsman")
 
-    Personality.create(type: "ISFP",
+    Personality.create(MBPT: "ISFP",
                       full_description: "As an ISFP, your primary mode of living is focused internally, where you deal with things according to how you feel about them, or how they fit into your value system. Your secondary mode is external, where you take things in via your five sense in a literal, concrete fashion.\n
                                         ISFPs live in the world of sensation possibilities. They are keenly in tune with the way things look, taste, sound, feel and smell. They have a strong aesthetic appreciation for art, and are likely to be artists in some form, because they are unusually gifted at creating and composing things which will strongly affect the senses. They have a strong set of values, which they strive to consistently meet in their lives. They need to feel as if they're living their lives in accordance with what they feel is right, and will rebel against anything which conflicts with that goal. They're likely to choose jobs and careers which allow them the freedom of working towards the realization of their value-oriented personal goals.\n
                                         ISFPs tend to be quiet and reserved, and difficult to get to know well. They hold back their ideas and opinions except from those who they are closest to. They are likely to be kind, gentle and sensitive in their dealings with others. They are interested in contributing to people's sense of well-being and happiness, and will put a great deal of effort and energy into tasks which they believe in.\n
@@ -129,7 +133,7 @@ class Seed
                       short_description: "Quiet, friendly, sensitive, and kind. Enjoy the present moment, what's going on around them. Like to have their own space and to work within their own time frame. Loyal and committed to their values and to people who are important to them. Dislike disagreements and conflicts, do not force their opinions or values on others.",
                       catchphrase: "The Peacemaker/The Artist")
 
-    Personality.create(type: "INFP",
+    Personality.create(MBPT: "INFP",
                       full_description: "As an INFP, your primary mode of living is focused internally, where you deal with things according to how you feel about them, or how they fit into your personal value system. Your secondary mode is external, where you take things in primarily via your intuition.\n
                                         INFPs, more than other iNtuitive Feeling types, are focused on making the world a better place for people. Their primary goal is to find out their meaning in life. What is their purpose? How can they best serve humanity in their lives? They are idealists and perfectionists, who drive themselves hard in their quest for achieving the goals they have identified for themselves\n
                                         INFPs are highly intuitive about people. They rely heavily on their intuitions to guide them, and use their discoveries to constantly search for value in life. They are on a continuous mission to find the truth and meaning underlying things. Every encounter and every piece of knowledge gained gets sifted through the INFP's value system, and is evaluated to see if it has any potential to help the INFP define or refine their own path in life. The goal at the end of the path is always the same - the INFP is driven to help people and make the world a better place.\n
@@ -144,7 +148,7 @@ class Seed
                       short_description: "Idealistic, loyal to their values and to people who are important to them. Want an external life that is congruent with their values. Curious, quick to see possibilities, can be catalysts for implementing ideas. Seek to understand people and to help them fulfill their potential. Adaptable, flexible, and accepting unless a value is threatened.",
                       catchphrase: "The Romantic/The Idealist")
 
-    Personality.create(type: "INTP",
+    Personality.create(MBPT: "INTP",
                       full_description: "As an INTP, your primary mode of living is focused internally, where you deal with things rationally and logically. Your secondary mode is external, where you take things in primarily via your intuition.\n
                                         INTPs live in the world of theoretical possibilities. They see everything in terms of how it could be improved, or what it could be turned into. They live primarily inside their own minds, having the ability to analyze difficult problems, identify patterns, and come up with logical explanations. They seek clarity in everything, and are therefore driven to build knowledge. They are the 'absent-minded professors', who highly value intelligence and the ability to apply logic to theories to find solutions. They typically are so strongly driven to turn problems into logical explanations, that they live much of their lives within their own heads, and may not place as much importance or value on the external world. Their natural drive to turn theories into concrete understanding may turn into a feeling of personal responsibility to solve theoretical problems, and help society move towards a higher understanding.\n
                                         INTPs value knowledge above all else. Their minds are constantly working to generate new theories, or to prove or disprove existing theories. They approach problems and theories with enthusiasm and skepticism, ignoring existing rules and opinions and defining their own approach to the resolution. They seek patterns and logical explanations for anything that interests them. They're usually extremely bright, and able to be objectively critical in their analysis. They love new ideas, and become very excited over abstractions and theories. They love to discuss these concepts with others. They may seem 'dreamy' and distant to others, because they spend a lot of time inside their minds musing over theories. They hate to work on routine things - they would much prefer to build complex theoretical solutions, and leave the implementation of the system to others. They are intensely interested in theory, and will put forth tremendous amounts of time and energy into finding a solution to a problem with has piqued their interest.\n
@@ -157,7 +161,7 @@ class Seed
                       short_description: "Seek to develop logical explanations for everything that interests them. Theoretical and abstract, interested more in ideas than in social interaction. Quiet, contained, flexible, and adaptable. Have unusual ability to focus in depth to solve problems in their area of interest. Skeptical, sometimes critical, always analytical.",
                       catchphrase: "The Thinker/The Architect")
 
-    Personality.create(type: "ESTP",
+    Personality.create(MBPT: "ESTP",
                       full_description: "As an ESTP, your primary mode of living is focused externally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is internal, where you deal with things rationally and logically.\n
                                         ESTPs are outgoing, straight-shooting types. Enthusiastic and excitable, ESTPs are 'doers' who live in the world of action. Blunt, straight-forward risk-takers, they are willing to plunge right into things and get their hands dirty. They live in the here-and-now, and place little importance on introspection or theory. The look at the facts of a situation, quickly decide what should be done, execute the action, and move on to the next thing.\n
                                         ESTPs have an uncanny ability to perceive people's attitudes and motivations. They pick up on little cues which go completely unnoticed by most other types, such as facial expressions and stance. They're typically a couple of steps ahead of the person they're interacting with. ESTPs use this ability to get what they want out of a situation. Rules and laws are seen as guidelines for behavior, rather than mandates. If the ESTP has decided that something needs to be done, then their 'do it and get on with it' attitude takes precendence over the rules. However, the ESTP tends to have their own strong belief in what's right and what's wrong, and will doggedly stick to their principles. The Rules of the Establishment may hold little value to the ESTP, but their own integrity mandates that they will not under any circumstances do something which they feel to be wrong.\n
@@ -169,7 +173,7 @@ class Seed
                       short_description: "Flexible and tolerant, they take a pragmatic approach focused on immediate results. Theories and conceptual explanations bore them - they want to act energetically to solve the problem. Focus on the here-and-now, spontaneous, enjoy each moment that they can be active with others. Enjoy material comforts and style. Learn best through doing.",
                       catchphrase: "The Promoter/The Doer" )
 
-    Personality.create(type: "ESFP",
+    Personality.create(MBPT: "ESFP",
 
                         full_description: "As an ESFP, your primary mode of living is focused externally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is internal, where you deal with things according to how you feel about them, or how they fit with your personal value system.\n
                                           ESFPs live in the world of people possibilties. They love people and new experiences. They are lively and fun, and enjoy being the center of attention. They live in the here-and-now, and relish excitement and drama in their lives.\n
@@ -186,7 +190,7 @@ class Seed
                         short_description: "Outgoing, friendly, and accepting. Exuberant lovers of life, people, and material comforts. Enjoy working with others to make things happen. Bring common sense and a realistic approach to their work, and make work fun. Flexible and spontaneous, adapt readily to new people and environments. Learn best by trying a new skill with other people.",
                         catchphrase: "The Performer/The Artist")
 
-    Personality.create(type: "ESFJ",
+    Personality.create(MBPT: "ESFJ",
                       full_description: "As an ESFJ, your primary mode of living is focused externally, where you deal with things according to how you feel about them, or how they fit in with your personal value system. Your secondary mode is internal, where you take things in via your five senses in a literal, concrete fashion.\n
                                         ESFJs are people persons - they love people. They are warmly interested in others. They use their Sensing and Judging characteristics to gather specific, detailed information about others, and turn this information into supportive judgments. They want to like people, and have a special skill at bringing out the best in others. They are extremely good at reading others, and understanding their point of view. The ESFJ's strong desire to be liked and for everything to be pleasant makes them highly supportive of others. People like to be around ESFJs, because the ESFJ has a special gift of invariably making people feel good about themselves.\n
                                         The ESFJ takes their responsibilities very seriously, and is very dependable. They value security and stability, and have a strong focus on the details of life. They see before others do what needs to be done, and do whatever it takes to make sure that it gets done. They enjoy these types of tasks, and are extremely good at them.\n
@@ -202,7 +206,7 @@ class Seed
                       short_description: "Warmhearted, conscientious, and cooperative. Want harmony in their environment, work with determination to establish it. Like to work with others to complete tasks accurately and on time. Loyal, follow through even in small matters. Notice what others need in their day-by-day lives and try to provide it. Want to be appreciated for who they are and for what they contribute.",
                       catchphrase: "The Caregiver/The Enthusiast")
 
-    Personality.create(type: "ENTP",
+    Personality.create(MBPT: "ENTP",
                       full_description: "As an ENTP, your primary mode of living is focused externally, where you take things in primarily via your intuition. Your secondary mode is internal, where you deal with things rationally and logically.\n
                                         With Extraverted Intuition dominating their personality, the ENTP's primary interest in life is understanding the world that they live in. They are constantly absorbing ideas and images about the situations they are presented in their lives. Using their intuition to process this information, they are usually extremely quick and accurate in their ability to size up a situation. With the exception of their ENFP cousin, the ENTP has a deeper understanding of their environment than any of the other types.\n
                                         This ability to intuitively understand people and situations puts the ENTP at a distinct advantage in their lives. They generally understand things quickly and with great depth. Accordingly, they are quite flexible and adapt well to a wide range of tasks. They are good at most anything that interests them. As they grow and further develop their intuitive abilities and insights, they become very aware of possibilities, and this makes them quite resourceful when solving problems.\n
@@ -217,7 +221,7 @@ class Seed
                       short_description: "Quick, ingenious, stimulating, alert, and outspoken. Resourceful in solving new and challenging problems. Adept at generating conceptual possibilities and then analyzing them strategically. Good at reading other people. Bored by routine, will seldom do the same thing the same way, apt to turn to one new interest after another.",
                       catchphrase: "The Visionary/The Inventor" )
 
-    Personality.create(type: "ESTJ",
+    Personality.create(MBPT: "ESTJ",
                       full_description: "As an ESTJ, your primary mode of living is focused externally, where you deal with things rationally and logically. Your secondary mode is internal, where you take things in via your five senses in a literal, concrete fashion.\n
                                         ESTJs live in a world of facts and concrete needs. They live in the present, with their eye constantly scanning their personal environment to make sure that everything is running smoothly and systematically. They honor traditions and laws, and have a clear set of standards and beliefs. They expect the same of others, and have no patience or understanding of individuals who do not value these systems. They value competence and efficiency, and like to see quick results for their efforts.\n
                                         ESTJs are take-charge people. They have such a clear vision of the way that things should be, that they naturally step into leadership roles. They are self-confident and aggressive. They are extremely talented at devising systems and plans for action, and at being able to see what steps need to be taken to complete a specific task. They can sometimes be very demanding and critical, because they have such strongly held beliefs, and are likely to express themselves without reserve if they feel someone isn't meeting their standards. But at least their expressions can be taken at face-value, because the ESTJ is extremely straight-forward and honest.\n
@@ -229,7 +233,7 @@ class Seed
                       short_description: "Practical, realistic, matter-of-fact. Decisive, quickly move to implement decisions. Organize projects and people to get things done, focus on getting results in the most efficient way possible. Take care of routine details. Have a clear set of logical standards, systematically follow them and want others to also. Forceful in implementing their plans.",
                       catchphrase: "The Supervisor/The Director")
 
-    Personality.create(type: 'ENTJ',
+    Personality.create(MBPT: 'ENTJ',
                       full_description: "As an ENTJ, your primary mode of living is focused externally, where you deal with things rationally and logically. Your secondary mode is internal, where you take things in primarily via your intuition.\n
                                         ENTJs are natural born leaders. They live in a world of possibilities where they see all sorts challenges to be surmounted, and they want to be the ones responsible for surmounting them. They have a drive for leadership, which is well-served by their quickness to grasp complexities, their ability to absorb a large amount of impersonal information, and their quick and decisive judgments. They are 'take charge' people.\n
                                         ENTJs are very career-focused, and fit into the corporate world quite naturally. They are constantly scanning their environment for potential problems which they can turn into solutions. They generally see things from a long-range perspective, and are usually successful at identifying plans to turn problems around - especially problems of a corporate nature. ENTJs are usually successful in the business world, because they are so driven to leadership. They're tireless in their efforts on the job, and driven to visualize where an organization is headed. For these reasons, they are natural corporate leaders.\n
@@ -244,4 +248,10 @@ class Seed
                       catchphrase: "The Executive/The Pioneer")
   end
 
+  def self.call
+    new.call
+  end
+
 end
+
+Seed.call

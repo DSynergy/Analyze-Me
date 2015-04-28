@@ -2,7 +2,7 @@
   <div class="images-wrapper"></div>
     <div class="side-image-content">
       <h4><%=@personality.catchphrase%></h4>
-      <h1><%=@personality.type%></h1>
+      <h1><%=@personality.MBPT%></h1>
       <h5>Jungian functional preferences</h5>
       <ul>
         <li>Dominant: Extraverted Intuition</li>
@@ -10,7 +10,7 @@
         <li>Tertiary: Extraverted Feeling</li>
         <li>Inferior: Introverted Sensing</li>
       </ul>
-      <p><%=@personality.full_description%></p>
+      <p><%=simple_format(@personality.full_description)%></p>
       <p>Famous people of this type:</p>
       <p>Average happiness index</p>
     </div>

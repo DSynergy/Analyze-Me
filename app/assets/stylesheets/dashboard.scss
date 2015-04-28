@@ -6,7 +6,12 @@
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  $hero-image: "/images/background_images/#{$nth}.JPG";
+  $imgKey: random(23);
+  $list: ankor, aspen, beats, berlin, budapest, buenos_aires, copper, cusco,
+  cz, dcmetro, Denver, Haup, iguazu, jamaica, jamaica_country, Japan, Jelly_Fish,
+  Kebler, rio, salt_flats, telluride, tokyo, uyuni;
+  $nth: nth($list, $imgKey);
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   background-color: #324766;

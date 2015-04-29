@@ -4,6 +4,8 @@ gem 'koala'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'faraday'
+gem 'twitter'
+gem 'sucker_punch'
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -39,4 +41,5 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry'
+  gem 'capybara'
 end

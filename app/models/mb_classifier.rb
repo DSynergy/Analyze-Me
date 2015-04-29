@@ -1,4 +1,6 @@
 class MBClassifier
+  attr_reader :connection
+
   def initialize
     @connection = Faraday.new(:url => "http://uclassify.com/") do |faraday|
       faraday.request  :url_encoded

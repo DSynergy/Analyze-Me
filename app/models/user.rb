@@ -32,6 +32,11 @@ class User < ActiveRecord::Base
     user.token = data.credentials.token
     user.raw_data = data
 
+
+    TweetJob.new.async.perform(user.nickname) if user.new_record?
+    # if it's a new user -- user ActiveRecord#new_user?
+      # queue a job to go fetch their tweets
+    #
     user.save
     user
   end

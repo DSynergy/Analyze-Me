@@ -1,4 +1,9 @@
-<h1>There was an error.
-<h2>I can't find your page :/. Here is a random picture to calm your furious anger<h2>
-
-<p>Your error is: <%=@exceptions%></p>
+<div class="image-gradient-dynamic">
+  <%= image_tag("background_images/#{randomized_background_image}.JPG") %>
+  <div class="overlay"></div>
+  <div class="copy">
+    <h1>There was an error.</h1>
+    <h2>I can't find your page :/. Here is a random picture to calm your furious anger</h2>
+    <p>Your error is: <%=@exceptions%></p>
+  </div>
+</div>

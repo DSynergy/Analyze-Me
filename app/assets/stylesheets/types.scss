@@ -110,7 +110,8 @@
   }
 
   .images-wrapper {
-    @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+    @include background(url('https:
+//raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
     background-size: cover;
     border-bottom: $side-image-border;
@@ -136,8 +137,7 @@
     }
 
     h1 {
-      font-size: 2em;
-      margin-bottom: 1.5em;
+      margin-bottom: 0.9em;
     }
 
     h4 {
@@ -154,7 +154,7 @@
     p {
       color: $base-font-color;
       line-height: $base-line-height;
-      margin-bottom: 1em;
+      margin-bottom: 3em;
     }
 
     button {

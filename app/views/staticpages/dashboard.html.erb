@@ -1,5 +1,5 @@
 <div class="image-gradient-dynamic">
-  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+  <%= image_tag("background_images/#{randomized_background_image}.JPG") %>
   <div class="overlay"></div>
   <div class="copy">
 		<div class="hero-copy">
@@ -8,9 +8,7 @@
 		</div>
       <button><%= link_to "Get Started with Twitter!", "auth/twitter", class: "dash-button" %></button>
       <button><%= link_to "Get Started with Facebook!", "auth/facebook", class: "dash-button" %></button>
-
       <button><a href="/about" class="dash-button",>Learn More</a></button>
-      <p>This is my personal project for Turing: Module 3</p>
+      <p>This is my personal project for Turing: Module 3. All photos are from my travels unless otherwise noted</p>
   </div>
 </div>
-</a></li>

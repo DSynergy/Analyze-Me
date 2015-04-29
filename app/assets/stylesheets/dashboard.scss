@@ -1,24 +1,20 @@
-.hero {
-  $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
-  $large-screen: em(860) !default;
-  $hero-background-top: #7F99BE;
-  $hero-background-bottom: #20392B;
-  $hero-color: white;
-  $gradient-angle: 10deg;
-  $hero-image: "/images/background_images/#{$nth}.JPG";
-  $imgKey: random(23);
-  $list: ankor, aspen, beats, berlin, budapest, buenos_aires, copper, cusco,
-  cz, dcmetro, Denver, Haup, iguazu, jamaica, jamaica_country, Japan, Jelly_Fish,
-  Kebler, rio, salt_flats, telluride, tokyo, uyuni;
-  $nth: nth($list, $imgKey);
+  .hero {
+    $base-border-radius: 3px !default;
+    $action-color: #477DCA !default;
+    $large-screen: em(860) !default;
+    $hero-background-top: #7F99BE;
+    $hero-background-bottom: #20392B;
+    $hero-color: white;
+    $gradient-angle: 10deg;
+    $hero-image: 'https:
+  //raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-  background-color: #324766;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 3em;
+    @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+    background-color: #324766;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 3em;
 
   .hero-logo img {
     height: 4em;

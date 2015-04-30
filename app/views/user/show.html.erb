@@ -13,18 +13,26 @@
       Here goes a button to analzye me from posts --> api request
     </br>
     </br>
+    <div class ="recent tweets">
+    <h4>Your last 10 tweets:</h4>
+      <ol>
+        <% @user.tweets.limit(10).each do |tweet| %>
+        <li>-<%= auto_link((tweet.tweet)) %></li>
+        <% end %>
+      </ol>
+    </div>
+    <br>
+    <h4>About</h4>
+    <p><%= @user.description %></p>
 
-      <h4>About</h4>
-      <p><%= @user.description %></p>
-
-      <h5>Your Jungian functional preferences</h5>
-      <ul>
-        <li>Dominant: Extraverted Feeling	</li>
-        <li>Auxiliary: Introverted Intuition </li>
-        <li>Tertiary: Extraverted Sensing	</li>
-        <li>Inferior: Introverted Thinking </li>
-      </ul>
-      </br>
+    <h5>Your Jungian functional preferences</h5>
+    <ul>
+      <li>Dominant: Extraverted Feeling	</li>
+      <li>Auxiliary: Introverted Intuition </li>
+      <li>Tertiary: Extraverted Sensing	</li>
+      <li>Inferior: Introverted Thinking </li>
+    </ul>
+    </br>
       <h5>Famous people of this type</h5>
       <h5>Average happiness index</h5>
     </div>

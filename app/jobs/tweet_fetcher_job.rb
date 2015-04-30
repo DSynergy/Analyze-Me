@@ -1,7 +1,8 @@
-class TweetFetcherJob 
+class TweetFetcherJob
   include SuckerPunch::Job
-  
+
   def perform
-    raise NotImplementedError
+    TweetFetcherJob.new.async.perform("fetch my tweets bro")
   end
+
 end

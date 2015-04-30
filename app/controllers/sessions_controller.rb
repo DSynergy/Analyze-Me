@@ -18,8 +18,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.tweets.delete_all
     session.clear
-    flash[:notice] = "You have been logged out"
+    flash[:notice] = "You have been logged out and all your tweets cleared"
     redirect_to root_path
   end
 

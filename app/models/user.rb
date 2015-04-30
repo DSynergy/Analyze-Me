@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :providers
+  has_many :tweets
 
   def self.find_or_create_from_facebook(data)
     provider = Provider.find_or_create_by(provider: data.provider, uid: data.uid)
@@ -22,7 +23,6 @@ class User < ActiveRecord::Base
     provider = Provider.find_or_create_by(provider: data.provider, uid: data.uid)
     user = User.find_or_create_by(provider.user_id)
 
-
     user.nickname = data.info.nickname
     user.name = data.info.name
     user.location = data.info.location
@@ -31,15 +31,14 @@ class User < ActiveRecord::Base
     user.status_count = data.extra.raw_info.statuses_count
     user.token = data.credentials.token
     user.raw_data = data
-
-
-    TweetJob.new.async.perform(user.nickname) if user.new_record?
-    # if it's a new user -- user ActiveRecord#new_user?
-      # queue a job to go fetch their tweets
-    #
+    #use a background worker to find tweets when logged in
+    #TweetFetcherJob.new.async.perform(user.nickname) if user.new_record?
+      tweets = TwitterService.new.tweets_by_user(user.nickname)
+      tweets.each do |tweet|
+        Tweet.create(tweet: tweet, user_id: user.id)
+      end
     user.save
     user
   end
-
 
 end

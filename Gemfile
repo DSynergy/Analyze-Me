@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'rails_autolink'
 
 #front-end from thoughtbot
 gem 'bourbon'

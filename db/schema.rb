@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430000846) do
+ActiveRecord::Schema.define(version: 20150501004203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,14 @@ ActiveRecord::Schema.define(version: 20150430000846) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "catchphrase"
+    t.string   "extraversion"
+    t.string   "introversion"
+    t.string   "intuition"
+    t.string   "sensing"
+    t.integer  "user_id"
   end
+
+  add_index "personalities", ["user_id"], name: "index_personalities_on_user_id", using: :btree
 
   create_table "providers", force: :cascade do |t|
     t.string   "provider"

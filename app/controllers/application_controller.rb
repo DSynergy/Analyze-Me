@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  # def set_name(user)
-  #   user.display_name ? user.display_name : user.username
-  # end
-
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end

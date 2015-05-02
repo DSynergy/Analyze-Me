@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   post 'logout',                 to: 'sessions#destroy'
 
+
+  resources :personalities, only: [:create]
+
   namespace :types do
     get 'type', to: "type#index"
     get 'ESTP', to: 'type#ESTP'

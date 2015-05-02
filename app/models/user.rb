@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :providers
   has_many :tweets
+  has_many :personalities
 
   def self.find_or_create_from_facebook(data)
     provider = Provider.find_or_create_by(provider: data.provider, uid: data.uid)

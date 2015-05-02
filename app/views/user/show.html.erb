@@ -8,9 +8,10 @@
         <h1>Your type is <%=@user.type%></h1>
       <% end %>
     </br>
-      Here goes a button to sign in with other provider
+       <%= form_for Personality.new do |form| %>
+         <h4><%= form.submit "Analyze!"%></h4>
+       <% end %>
     </br>
-      Here goes a button to analzye me from posts --> api request
     </br>
     </br>
     <div class ="recent tweets">

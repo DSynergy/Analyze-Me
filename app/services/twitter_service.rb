@@ -16,7 +16,7 @@ class TwitterService
 
   def tweets_by_user(user)
     tweets = []
-    client.user_timeline(user, count: 200).each do |tweet|
+    client.user_timeline(user, count: 100).each do |tweet|
       tweets << tweet.text
     end
     tweets

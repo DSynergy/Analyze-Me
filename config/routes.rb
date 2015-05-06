@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   post 'logout',                 to: 'sessions#destroy'
 
-
-  resources :personalities, only: [:create]
-
   namespace :types do
     get 'type', to: "type#index"
     get 'ESTP', to: 'type#ESTP'
@@ -27,7 +24,7 @@ Rails.application.routes.draw do
     get 'ISFP', to: 'type#ISFP'
   end
 
-  resources :user, only: [:show]
+  resources :users, only: [:show, :create, :index]
 
   get 'about',               to: 'staticpages#about'
   get 'background',          to: 'staticpages#background'

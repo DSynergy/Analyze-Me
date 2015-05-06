@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501004203) do
+ActiveRecord::Schema.define(version: 20150505002416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,14 +29,7 @@ ActiveRecord::Schema.define(version: 20150501004203) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "catchphrase"
-    t.string   "extraversion"
-    t.string   "introversion"
-    t.string   "intuition"
-    t.string   "sensing"
-    t.integer  "user_id"
   end
-
-  add_index "personalities", ["user_id"], name: "index_personalities_on_user_id", using: :btree
 
   create_table "providers", force: :cascade do |t|
     t.string   "provider"
@@ -63,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150501004203) do
     t.string   "email"
     t.string   "image"
     t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "link"
     t.string   "gender"
     t.string   "type"
@@ -73,6 +66,35 @@ ActiveRecord::Schema.define(version: 20150501004203) do
     t.string   "description"
     t.string   "status_count"
     t.json     "raw_data"
+    t.float    "introversion"
+    t.float    "extraversion"
+    t.float    "intuition"
+    t.float    "sensing"
+    t.float    "thinking"
+    t.float    "feeling"
+    t.float    "judging"
+    t.float    "perceiving"
+    t.float    "negative_sentiment"
+    t.float    "postive_sentiment"
+    t.float    "topic_arts"
+    t.float    "topic_business"
+    t.float    "topic_computers"
+    t.float    "topic_games"
+    t.float    "topic_health"
+    t.float    "topic_home"
+    t.float    "topic_recreation"
+    t.float    "topic_science"
+    t.float    "topic_society"
+    t.float    "topic_sports"
+    t.float    "age_group1"
+    t.float    "age_group2"
+    t.float    "age_group3"
+    t.float    "age_group4"
+    t.float    "age_group5"
+    t.float    "age_group6"
+    t.integer  "personalities_id"
   end
+
+  add_index "users", ["personalities_id"], name: "index_users_on_personalities_id", using: :btree
 
 end

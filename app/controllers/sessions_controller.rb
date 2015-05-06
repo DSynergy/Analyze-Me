@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to user_path(user.id)
       flash[:notice] = "You are signed in with #{auth_provider.capitalize}"
     else
       redirect_to root_path

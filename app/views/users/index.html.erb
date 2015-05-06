@@ -1,0 +1,17 @@
+<div class="cards">
+
+  <div class="card">
+    <% @users.each do |user| %>
+    <div class="card-image">
+        <%= user.image if user.image%>
+    </div>
+    <div class="card-header">
+      <%= user.name if user.name%>
+    </div>
+    <div class="card-copy">
+      <!-- <%#= personality.short_description if user.personality.short_description %> -->
+    </div>
+  </div>
+  <% end %>
+
+</div>

@@ -37,6 +37,8 @@ gem 'bitters'
 gem 'rails_12factor'
 
 group :development, :test do
+  gem 'simplecov', :require => false
+  gem 'vcr'
   gem 'byebug'
   gem 'better_errors'
   gem 'web-console', '~> 2.0'

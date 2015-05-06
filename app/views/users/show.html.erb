@@ -2,30 +2,34 @@
   <div class="images-wrapper"></div>
     <div class="side-image-content">
 
-      <h4><%=image_tag(@user.image) %> Welcome <%=@user.name%> - <%= @user.nickname %></h4>
-
+      <h4><%=image_tag(@user.image) %> Welcome <%=@user.name if @user.name%> - <%= @user.nickname if @user.nickname %></h4>
+    </br>
+    </br>
+    </br>
       <% if @user.type %>
         <h1>Your type is <%=@user.type%></h1>
-      <% end %>
-    </br>
-       <%= form_for Personality.new do |form| %>
-         <h4><%= form.submit "Analyze!"%></h4>
+         <%= form_for User.new do |form| %>
+         <h1><%= form.submit "Analyze Again!"%></h1>
+         <% end %>
+       <% else %>
+         <%= form_for User.new do |form| %>
+         <h1><%= form.submit "Analyze Me!"%></h1>
+         <% end %>
        <% end %>
     </br>
     </br>
-    </br>
+    <h4>About</h4>
+    <p><%= @user.description %></p>
+
     <div class ="recent tweets">
-    <h4>Your last 10 tweets:</h4>
+    <h4>Your last 20 tweets:</h4>
       <ol>
-        <% @user.tweets.limit(10).each do |tweet| %>
+        <% @user.tweets.limit(20).each do |tweet| %>
         <li>-<%= auto_link((tweet.tweet)) %></li>
         <% end %>
       </ol>
     </div>
     <br>
-    <h4>About</h4>
-    <p><%= @user.description %></p>
-
     <h5>Your Jungian functional preferences</h5>
     <ul>
       <li>Dominant: Extraverted Feeling	</li>

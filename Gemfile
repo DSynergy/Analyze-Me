@@ -34,7 +34,10 @@ gem 'rails_autolink'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
-gem 'rails_12factor'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'simplecov', :require => false

@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UserLoginTest < ActiveSupport::TestCase
+  include Capybara::DSL
 
 
   # test 'a user can login with twitter' do
@@ -16,7 +17,7 @@ class UserLoginTest < ActiveSupport::TestCase
   #      'secret' => 'mock_secret'
   #     }
   #    })
-  # 
+  #
   #   visit "/"
   #   click_link_or_button "Sign up with Twitter!"
   #   assert page.has_content?('homepage')

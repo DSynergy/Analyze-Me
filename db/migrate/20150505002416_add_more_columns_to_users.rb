@@ -1,34 +1,34 @@
 class AddMoreColumnsToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :introversion,       :float
-    add_column :users, :extraversion,       :float
-    add_column :users, :intuition,          :float
-    add_column :users, :sensing,            :float
-    add_column :users, :thinking,           :float
-    add_column :users, :feeling,            :float
-    add_column :users, :judging,            :float
-    add_column :users, :perceiving,         :float
+    add_column :users, :introversion,       :decimal, precision: 5, scale: 2
+    add_column :users, :extraversion,       :decimal, precision: 5, scale: 2
+    add_column :users, :intuition,          :decimal, precision: 5, scale: 2
+    add_column :users, :sensing,            :decimal, precision: 5, scale: 2
+    add_column :users, :thinking,           :decimal, precision: 5, scale: 2
+    add_column :users, :feeling,            :decimal, precision: 5, scale: 2
+    add_column :users, :judging,            :decimal, precision: 5, scale: 2
+    add_column :users, :perceiving,         :decimal, precision: 5, scale: 2
 
-    add_column :users, :negative_sentiment, :float
-    add_column :users, :postive_sentiment,  :float
+    add_column :users, :negative_sentiment, :decimal, precision: 5, scale: 2
+    add_column :users, :postive_sentiment,  :decimal, precision: 5, scale: 2
 
-    add_column :users, :topic_arts,         :float
-    add_column :users, :topic_business,     :float
-    add_column :users, :topic_computers,    :float
-    add_column :users, :topic_games,        :float
-    add_column :users, :topic_health,       :float
-    add_column :users, :topic_home,         :float
-    add_column :users, :topic_recreation,   :float
-    add_column :users, :topic_science,      :float
-    add_column :users, :topic_society,      :float
-    add_column :users, :topic_sports,       :float
+    add_column :users, :topic_arts,         :decimal, precision: 5, scale: 2
+    add_column :users, :topic_business,     :decimal, precision: 5, scale: 2
+    add_column :users, :topic_computers,    :decimal, precision: 5, scale: 2
+    add_column :users, :topic_games,        :decimal, precision: 5, scale: 2
+    add_column :users, :topic_health,       :decimal, precision: 5, scale: 2
+    add_column :users, :topic_home,         :decimal, precision: 5, scale: 2
+    add_column :users, :topic_recreation,   :decimal, precision: 5, scale: 2
+    add_column :users, :topic_science,      :decimal, precision: 5, scale: 2
+    add_column :users, :topic_society,      :decimal, precision: 5, scale: 2
+    add_column :users, :topic_sports,       :decimal, precision: 5, scale: 2
 
-    add_column :users, :age_group1,         :float
-    add_column :users, :age_group2,         :float
-    add_column :users, :age_group3,         :float
-    add_column :users, :age_group4,         :float
-    add_column :users, :age_group5,         :float
-    add_column :users, :age_group6,         :float
+    add_column :users, :age_group1,         :decimal, precision: 5, scale: 2
+    add_column :users, :age_group2,         :decimal, precision: 5, scale: 2
+    add_column :users, :age_group3,         :decimal, precision: 5, scale: 2
+    add_column :users, :age_group4,         :decimal, precision: 5, scale: 2
+    add_column :users, :age_group5,         :decimal, precision: 5, scale: 2
+    add_column :users, :age_group6,         :decimal, precision: 5, scale: 2
 
     add_column :users, :personality_id, :integer
     add_index :users, :personality_id

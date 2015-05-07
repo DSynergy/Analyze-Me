@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20150507024818) do
     t.string   "email"
     t.string   "image"
     t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "link"
     t.string   "gender"
     t.string   "nickname"
@@ -76,32 +76,32 @@ ActiveRecord::Schema.define(version: 20150507024818) do
     t.string   "description"
     t.string   "status_count"
     t.json     "raw_data"
-    t.float    "introversion"
-    t.float    "extraversion"
-    t.float    "intuition"
-    t.float    "sensing"
-    t.float    "thinking"
-    t.float    "feeling"
-    t.float    "judging"
-    t.float    "perceiving"
-    t.float    "negative_sentiment"
-    t.float    "positive_sentiment"
-    t.float    "topic_arts"
-    t.float    "topic_business"
-    t.float    "topic_computers"
-    t.float    "topic_games"
-    t.float    "topic_health"
-    t.float    "topic_home"
-    t.float    "topic_recreation"
-    t.float    "topic_science"
-    t.float    "topic_society"
-    t.float    "topic_sports"
-    t.float    "age_group1"
-    t.float    "age_group2"
-    t.float    "age_group3"
-    t.float    "age_group4"
-    t.float    "age_group5"
-    t.float    "age_group6"
+    t.decimal  "introversion",       precision: 5, scale: 2
+    t.decimal  "extraversion",       precision: 5, scale: 2
+    t.decimal  "intuition",          precision: 5, scale: 2
+    t.decimal  "sensing",            precision: 5, scale: 2
+    t.decimal  "thinking",           precision: 5, scale: 2
+    t.decimal  "feeling",            precision: 5, scale: 2
+    t.decimal  "judging",            precision: 5, scale: 2
+    t.decimal  "perceiving",         precision: 5, scale: 2
+    t.decimal  "negative_sentiment", precision: 5, scale: 2
+    t.decimal  "positive_sentiment", precision: 5, scale: 2
+    t.decimal  "topic_arts",         precision: 5, scale: 2
+    t.decimal  "topic_business",     precision: 5, scale: 2
+    t.decimal  "topic_computers",    precision: 5, scale: 2
+    t.decimal  "topic_games",        precision: 5, scale: 2
+    t.decimal  "topic_health",       precision: 5, scale: 2
+    t.decimal  "topic_home",         precision: 5, scale: 2
+    t.decimal  "topic_recreation",   precision: 5, scale: 2
+    t.decimal  "topic_science",      precision: 5, scale: 2
+    t.decimal  "topic_society",      precision: 5, scale: 2
+    t.decimal  "topic_sports",       precision: 5, scale: 2
+    t.decimal  "age_group1",         precision: 5, scale: 2
+    t.decimal  "age_group2",         precision: 5, scale: 2
+    t.decimal  "age_group3",         precision: 5, scale: 2
+    t.decimal  "age_group4",         precision: 5, scale: 2
+    t.decimal  "age_group5",         precision: 5, scale: 2
+    t.decimal  "age_group6",         precision: 5, scale: 2
     t.integer  "personality_id"
   end
 

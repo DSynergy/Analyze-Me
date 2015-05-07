@@ -70,8 +70,10 @@
              <li> <h3 class="purple"><%=@user.negative_sentiment%>%</h3> <span>Negative words</span></li>
            </ul>
           <ul class="statsLeft">
-            <li><h3 class="yellow"></h3> <span></span></li>
-            <li><h3 class="red"></h3> <span></span></li>
+            <% if @user.location %>
+              <li><h3 class="yellow">Location</h3> <span><%=@user.location%></span></li>
+            <% end %>
+            <li><h3 class="red">Total tweets/posts</h3> <span><%=@user.status_count%></span></li>
             </ul>
             <ul class="statsRight">
                 <li><h3></h3> <span></span></li>
@@ -151,7 +153,7 @@
           <tr><td>Arts</td><td><%=@user.topic_arts %>%</td></tr>
           <tr><td>Business</td><td><%=@user.topic_business %>%</td></tr>
           <tr><td>Computers</td><td><%=@user.topic_computers %>%</td></tr>
-          <tr><td>Games</td><td><%=@user.topic_games %></td></tr>
+          <tr><td>Games</td><td><%=@user.topic_games %>%</td></tr>
           <tr><td>Health</td><td><%=@user.topic_health %>%</td></tr>
           <tr><td>Home</td><td><%=@user.topic_home%>%</td></tr>
           <tr><td>Recreation</td><td><%=@user.topic_recreation %>%</td></tr>

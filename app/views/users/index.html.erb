@@ -3,13 +3,15 @@
   <div class="card">
     <% @users.each do |user| %>
     <div class="card-image">
-        <%= user.image if user.image%>
+      <%= image_tag(user.image) if user.image%>
     </div>
     <div class="card-header">
-      <%= user.name if user.name%>
+      <h4><%=user.personality.MBPT%></h4>
+      <%= user.name if user.name%> - <%= user.nickname if user.nickname %>
     </div>
     <div class="card-copy">
-      <!-- <%#= personality.short_description if user.personality.short_description %> -->
+      INTJ's:
+      <%= user.personality.short_description if user.personality.short_description %>
     </div>
   </div>
   <% end %>

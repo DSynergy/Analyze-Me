@@ -1,3 +1,4 @@
 class Personality < ActiveRecord::Base
-  has_many :users
+  belongs_to :user
+  has_one :function
 end

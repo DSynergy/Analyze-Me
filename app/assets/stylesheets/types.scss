@@ -136,6 +136,568 @@
       padding: 4em 4em 8em 4em;
     }
 
+    .expander {
+      $base-font-size: 1em !default;
+      $base-line-height: 1.5em !default;
+      $base-spacing: 1.5em !default;
+      $action-color: #477DCA !default;
+      $base-link-color: $action-color !default;
+      $dark-gray: #333 !default;
+      $light-gray: #DDD !default;
+      $base-font-color: $dark-gray !default;
+      $expander-arrow-width: 0.7em;
+      $expander-toggle-size: 1em;
+      $expander-toggle-arrow-size: $expander-toggle-size;
+      $expander-toggle-margin: 1em;
+
+      width: 60%;
+
+      .expander-trigger {
+        @include user-select(none);
+        border-bottom: 1px solid $light-gray;
+        color: $base-link-color;
+        cursor: pointer;
+        display: block;
+        font-size: $expander-toggle-size;
+        margin-bottom: $expander-toggle-size;
+        padding-bottom: $expander-toggle-size / 4;
+        text-decoration: none;
+
+        &:before {
+          font-size: $expander-arrow-width;
+          content: "\25BC";
+          margin-right: 0.5em;
+        }
+      }
+
+      .expander-content p {
+        color: $base-font-color;
+        line-height: $base-line-height;
+      }
+
+      .expander-hidden {
+        &:before {
+          font-size: $expander-arrow-width;
+          content: "\25BA";
+        }
+      }
+
+      .expander-hidden + .expander-content {
+        display: none;
+      }
+    }
+
+    .modal {
+      $base-border-color: gainsboro !default;
+      $base-border-radius: 3px !default;
+      $base-background-color: white !default;
+      $base-font-size: 1em !default;
+      $base-line-height: 1.5em !default;
+      $action-color: #477DCA !default;
+      $dark-gray: #333 !default;
+      $light-gray: #DDD !default;
+      $medium-screen: em(640) !default;
+      $large-screen: em(860) !default;
+      $base-font-color: $dark-gray !default;
+      $modal-padding: 3em;
+      $modal-background: $base-background-color;
+      $modal-close-color: $light-gray;
+      $modal-image-height: 135px;
+      $modal-image-width: $modal-image-height;
+      $modal-trigger-image-width: 300px;
+
+      label {
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+
+      label img {
+        border-radius: $modal-trigger-image-width / 2;
+        display: block;
+        max-width: $modal-trigger-image-width;
+      }
+
+      .modal-state {
+        display: none;
+      }
+
+      .modal-trigger {
+        @include button(flat, $action-color);
+        padding: 0.8em 1em;
+      }
+
+      .modal-fade-screen { // overlay
+        @include transition(opacity 0.25s ease);
+        @include position(fixed, 0px 0px 0px 0px);
+        background: rgba(0,0,0, 0.85);
+        opacity: 0;
+        padding-top: 0.6em;
+        text-align: left;
+        visibility: hidden;
+        z-index: 99999999999;
+
+        @include media($large-screen) {
+          padding-top: 10em;
+        }
+
+        .modal-bg {
+          @include position(absolute, 0px 0px 0px 0px);
+          cursor: pointer;
+        }
+      }
+
+      .modal-close {
+        @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+        @include size(1.5em);
+        background: $modal-background;
+        cursor: pointer;
+
+        &:after,
+        &:before {
+          @include position(absolute, 3px 3px 0 50%);
+          @include transform(rotate(45deg));
+          @include size(0.15em 1.5em);
+          background: $modal-close-color;
+          content: '';
+          display: block;
+          margin: -3px 0 0 -1px;
+        }
+
+        &:hover:after,
+        &:hover:before {
+          background: darken($modal-close-color, 10%);
+        }
+
+        &:before {
+          @include transform(rotate(-45deg));
+        }
+      }
+
+      .modal-inner {
+        @include transition(opacity 0.25s ease);
+        background: $modal-background;
+        border-radius: $base-border-radius;
+        margin-top: 0;
+        margin: auto;
+        max-height: 95%;
+        overflow: auto;
+        padding: $modal-padding / 2;
+        position: relative;
+        width: 95%;
+
+        @include media($medium-screen) {
+          max-height: 70%;
+          padding: $modal-padding;
+          width: 60%;
+        }
+
+        @include media($large-screen) {
+          width: 50%;
+        }
+
+        #contenitore{
+  position: relative;
+  width: 800px;
+  margin: 20px auto;
+  text-align:center;
+  overflow:hidden;
+  font: 14px 'Trebuchet MS', sans serif;
+  }
+  .left{
+  float:left;
+  width:48%;
+  }
+  #grafico{
+  position:relative;
+  height:300px;
+  border-left:2px solid #000000;
+  border-bottom: 2px solid #000000;
+  width:100%;
+  margin-top:20px;
+  }
+  .riga{
+  position:absolute;
+  left:0;
+  height: 1px;
+  background-color:gray;
+  width: 100%;
+  }
+  .riga div{
+  float:left;
+  margin: -8px 0 0 -40px;
+  }
+  .canc{
+  clear:both;
+  }
+  table{
+  width:60%;
+  background-color: white;
+  color: #000;
+  margin: 1em auto;
+  }
+  table caption{
+  background-color: #D8EED8;
+  color: #004156;
+  text-align: left;
+  }
+  table tr:nth-child(2n){
+  background-color: #D8EED8;
+  }
+  table tr:nth-child(2n+1){
+  background-color: #BFDFFF;
+  }
+  table td{
+  text-align:center;
+  border-bottom: 1px solid #CDCDCD;
+  padding: 6px;
+  }
+  .column{
+  position:absolute;
+  width: 16%;
+  bottom: 0;
+  background-color: #003366;
+  margin-left:5%;
+  }
+  div.button {
+      margin: 0 auto;
+      text-align: center;
+      width: 100px;
+      background-color:#003366;
+      border: 1px solid #003366;
+      border-radius: 5px;
+      padding: 8px;
+      color: #E1E2CF;
+      cursor: pointer;
+  }
+  .column div{
+  margin-top:-20px;
+  height:20px;
+  }
+
+
+        h1 {
+          color: $base-font-color;
+          margin-bottom: 0 0 0.6em 0;
+          text-align: left;
+          text-transform: capitalize;
+        }
+
+        p {
+          color: $base-font-color;
+          line-height: $base-line-height;
+        }
+
+        .modal-intro {
+          font-weight: 800;
+        }
+
+        .modal-content {
+          color: $base-font-color;
+
+          @include media($medium-screen) {
+            @include columns(2 8em);
+          }
+        }
+
+        a.cta {
+          color: white;
+          display: inline-block;
+          margin-right: 0.5em;
+          margin-top: 1em;
+
+          &:last-child {
+            padding: 0 2em;
+          }
+        }
+      }
+
+      .modal-state:checked + .modal-fade-screen {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-state:checked + .modal-fade-screen .modal-inner {
+        top: 0.5em;
+      }
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+
+    @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+    body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    list-style: none;
+    overflow: hidden;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    }
+    .progressDiv {
+    width: 84%;
+    background: #fcfcfc;
+    height: 325px;
+    border: 1px solid #ccc;
+    position: relative;
+    left: 7%;
+    top: 0px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px 1px #ccc;
+    }
+
+    .statChartHolder {
+    width: 35%;
+    height: 90%;
+    position: relative;
+    border-right: 1px solid #ccc;
+    top: 15px;
+        display: inline-block;
+    }
+
+    .statRightHolder {
+    display: inline-block;
+    height: 90%;
+    width: 64%;
+    position: relative;
+    top: -32px;
+    margin: 0;
+    }
+    .statRightHolder ul {
+    list-style: none;
+        margin: 0;
+    }
+    .statRightHolder li {
+    border-bottom: 1px solid #ccc;
+    height: 85px;
+    width: 95%;
+    position: relative;
+    top: -25px;
+    }
+    .statRightHolder h3 {
+    display: inline-block;
+    margin-right: 15px;
+    color: #B6B5B5;
+    font-weight: 300;
+    font-size: 38px;
+    }
+    .statRightHolder span {
+    display: inline-block;
+    color: #B6B5B5;
+    font-size: 21px;
+    font-weight: 300;
+    }
+
+    .statsLeft {
+        list-style:none;
+        display:inline-block;
+        width:45%;
+    }
+    .statsLeft li {
+    width: 100%;
+    height: 14px;
+    border: none;
+    top: 5px;
+    margin-bottom: 25px;
+    }
+    .statsLeft h3{
+        font-size:17px;
+        display: inline-block;
+    }
+    .statsLeft span{
+        font-size: 17px;
+        display:inline-block;
+    }
+    .statsRight {
+    width: 45%;
+    display: inline-block;
+    position: absolute;
+    }
+    .statsRight li {
+    width: 100%;
+    height: 14px;
+    border: none;
+    top: 5px;
+    margin-bottom: 25px;
+    }
+    .statsRight h3{
+        font-size:17px;
+        display: inline-block;
+    }
+    .statsRight span{
+        font-size: 17px;
+        display:inline-block;
+    }
+    /* Pie Chart */
+    .progress-pie-chart {
+      width:200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #E5E5E5;
+      position: relative;
+    }
+    .progress-pie-chart.gt-50 {
+      background-color: #81CE97;
+    }
+
+    .ppc-progress {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      left: calc(50% - 100px);
+      top: calc(50% - 100px);
+      width: 200px;
+      height: 200px;
+      clip: rect(0, 200px, 200px, 100px);
+    }
+    .ppc-progress .ppc-progress-fill {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      left: calc(50% - 100px);
+      top: calc(50% - 100px);
+      width: 200px;
+      height: 200px;
+      clip: rect(0, 100px, 200px, 0);
+      background: #81CE97;
+      transform: rotate(60deg);
+    }
+    .gt-50 .ppc-progress {
+      clip: rect(0, 100px, 200px, 0);
+    }
+    .gt-50 .ppc-progress .ppc-progress-fill {
+      clip: rect(0, 200px, 200px, 100px);
+      background: #E5E5E5;
+    }
+
+    .ppc-percents {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      left: calc(50% - 173.91304px/2);
+      top: calc(50% - 173.91304px/2);
+      width: 173.91304px;
+      height: 173.91304px;
+      background: #fff;
+      text-align: center;
+      display: table;
+    }
+    .ppc-percents span {
+      display: block;
+      font-size: 2.6em;
+      font-weight: bold;
+      color: #81CE97;
+    }
+
+    .pcc-percents-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .progress-pie-chart {
+      margin: 50px auto 0;
+    }
+
+
+    // Based on code by Kasper Mikiewicz
+    @import url(http://fonts.googleapis.com/css?family=Roboto:400+700);
+
+    body {
+      background: #30303A;
+      font-family: Roboto;
+    }
+
+    #chart {
+      width: 650px;
+      height: 300px;
+      margin: 30px auto 0;
+      display: block;
+
+      #numbers {
+        color: black;
+        width: 50px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        float: left;
+
+        li {
+          color: black;
+          text-align: right;
+          padding-right: 1em;
+          list-style: none;
+          height: 29px;
+          border-bottom: 1px solid #444;
+          position: relative;
+          bottom: 30px;
+
+          &:last-child {
+            height: 30px;
+          }
+
+          span {
+            color: black;
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+          }
+        }
+      }
+
+      #bars {
+        display: inline-block;
+        background: rgba(0,0,0,0.2);
+        width: 600px;
+        height: 300px;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 0 0 1px #444;
+
+        li {
+          display: table-cell;
+          width: 100px;
+          height: 300px;
+          margin: 0;
+          text-align: center;
+          position: relative;
+
+          .bar {
+            display: block;
+            width: 70px;
+            margin-left: 5px;
+            background: #49E;
+            position: absolute;
+            bottom: 0;
+
+            &:hover {
+              background: #5AE;
+              cursor: pointer;
+
+              &:before {
+                color: white;
+                content: attr(data-percentage) '%';
+                position:relative;
+                bottom: 20px;
+              }
+            }
+          }
+
+          span {
+            color: black;
+            width: 100%;
+            position: absolute;
+            bottom: -2em;
+            left: 0;
+            text-align: center;
+            font-size: 75%;
+          }
+        }
+      }
+    }
+
     h1 {
       margin-bottom: 0.9em;
     }

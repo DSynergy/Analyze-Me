@@ -1,0 +1,21 @@
+<div class="side-image">
+  <div class="images-wrapper">
+  </div>
+    <div class="side-image-content">
+      <h4>The Topic Analyzer</h4>
+      <p>Categories an English text into a topic (Arts, Business, Computers, Games, Health, Home, Recreation, Science, Society and Sports). Each of those topics has more specific child classifier (Art Topics, Business Topics etc). It uses a subset of topics from the Open Directory Project.</p>
+      <p>The <a href="http://www.uclassify.com/browse/uClassify/Topics">API</a> can be found here.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.side-image .images-wrapper {
+    background: url(<%= image_path("background_images/#{randomized_background_image}.JPG")%>) no-repeat;
+    display: table-cell;
+    width: 33.3333%;
+    background-position: center bottom;
+    background-size: cover;
+    border-right: 1px solid rgba(38, 74, 38, 0.2);
+}
+</style>

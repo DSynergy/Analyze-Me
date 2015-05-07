@@ -2,6 +2,7 @@ class Seed
 
   def call
     create_types
+    create_functions
   end
 
   def create_types
@@ -23,7 +24,9 @@ class Seed
                                         An ENFJ who has not developed their Feeling side may have difficulty making good decisions, and may rely heavily on other people in decision-making processes. If they have not developed their Intuition, they may not be able to see possibilities, and will judge things too quickly based on established value systems or social rules, without really understanding the current situation. An ENFJ who has not found their place in the world is likely to be extremely sensitive to criticism, and to have the tendency to worry excessively and feel guilty. They are also likely to be very manipulative and controling with others.\n
                                         In general, ENFJs are charming, warm, gracious, creative and diverse individuals with richly developed insights into what makes other people tick. This special ability to see growth potential in others combined with a genuine drive to help people makes the ENFJ a truly valued individual. As giving and caring as the ENFJ is, they need to remember to value their own needs as well as the needs of others.",
                       short_description: "Warm, empathetic, responsive, and responsible. Highly attuned to the emotions, needs, and motivations of others. Find potential in everyone, want to help others fulfill their potential. May act as catalysts for individual and group growth. Loyal, responsive to praise and criticism. Sociable, facilitate others in a group, and provide inspiring leadership.",
-                      catchphrase: "The Giver/The Teacher")
+                      catchphrase: "The Giver/The Teacher",
+                      famous_people: "Dr. Martin Luther King, Jr., Abraham Maslow, Ross Perot, Francois Mitterand, Bob Saget, Peyton Manning, Mikhail Gorbachev, Dennis Hopper, Diane Sawyer, Tommy Lee Jones, Johnny Depp, Ben Stiller, Matthew McConaughey, Pete Sampras, Ben Affleck, Ralph Nader, Margaret Mead")
+
 
     Personality.create(MBPT: 'ENFP',
                       full_description: "As an ENFP, your primary mode of living is focused externally, where you take things in primarily via your intuition. Your secondary mode is internal, where you deal with things according to how you feel about them, or how they fit in with your personal value system.\n
@@ -40,7 +43,8 @@ class Seed
                                         Because they are so alert and sensitive, constantly scanning their environments, ENFPs often suffer from muscle tension. They have a strong need to be independent, and resist being controlled or labelled. They need to maintain control over themselves, but they do not believe in controlling others. Their dislike of dependence and suppression extends to others as well as to themselves.\n
                                         ENFPs are charming, ingenuous, risk-taking, sensitive, people-oriented individuals with capabilities ranging across a broad spectrum. They have many gifts which they will use to fulfill themselves and those near them, if they are able to remain centered and master the ability of following through.",
                       short_description: "Warmly enthusiastic and imaginative. See life as full of possibilities. Make connections between events and information very quickly, and confidently proceed based on the patterns they see. Want a lot of affirmation from others, and readily give appreciation and support. Spontaneous and flexible, often rely on their ability to improvise and their verbal fluency.",
-                      catchphrase: "The Inspirer/The Reporter" )
+                      catchphrase: "The Inspirer/The Reporter",
+                      famous_people: "Walt Disney, Ellen DeGeneres, Mark Twain, Robin Williams, Martin Short, Sandra Bullock, Andy Kaufman, Regis Philbin, Dave Thomas")
 
     Personality.create(MBPT: 'INTJ',
                       full_description: "As an INTJ, your primary mode of living is focused internally, where you take things in primarily via your intuition. Your secondary mode is external, where you deal with things rationally and logically.\n
@@ -56,7 +60,8 @@ class Seed
                                         INTJs need to remember to express themselves sufficiently, so as to avoid difficulties with people misunderstandings. In the absence of properly developing their communication abilities, they may become abrupt and short with people, and isolationists.\n
                                         INTJs have a tremendous amount of ability to accomplish great things. They have insight into the Big Picture, and are driven to synthesize their concepts into solid plans of action. Their reasoning skills gives them the means to accomplish that. INTJs are most always highly competent people, and will not have a problem meeting their career or education goals. They have the capability to make great strides in these arenas. On a personal level, the INTJ who practices tolerances and puts effort into effectively communicating their insights to others has everything in his or her power to lead a rich and rewarding life.",
                       short_description: "Have original minds and great drive for implementing their ideas and achieving their goals. Quickly see patterns in external events and develop long-range explanatory perspectives. When committed, organize a job and carry it through. Skeptical and independent, have high standards of competence and performance - for themselves and others.",
-                      catchphrase: "The Mastermind/The Strategist")
+                      catchphrase: "The Mastermind/The Strategist",
+                      famous_people: "Thomas Jefferson, Augustus Caesar, Dustin Gault, Stephen Hawking, Hannibal Barca, Sir Isaac Newton, Mark Zuckerberg, Susan B. Anthony, Dwight D. Eisenhower, Jane Austen, Angela Lansbury, Peter Jennings, C. S. Lewis, Martina Navratilova, Arnold Schwarzenegger, Rudy Giuliani, Donald Rumsfeld, General Colin Powell, Lance Armstrong, Katie Couric, Dan Akroyd, Woodrow Wilson, William J. Bennett, William F. Buckley, Jr., Michael Dukakis, Greg Gumbel, Pernell Roberts, Chester A. Arthur, Calvin Coolidge, James K. Polk")
 
     Personality.create(MBPT: 'INFJ',
                       full_description:"As an INFJ, your primary mode of living is focused internally, where you take things in primarily via intuition. Your secondary mode is external, where you deal with things according to how you feel about them, or how they fit with your personal value system.\n
@@ -69,7 +74,8 @@ class Seed
                                         In the workplace, the INFJ usually shows up in areas where they can be creative and somewhat independent. They have a natural affinity for art, and many excel in the sciences, where they make use of their intuition. INFJs can also be found in service-oriented professions. They are not good at dealing with minutia or very detailed tasks. The INFJ will either avoid such things, or else go to the other extreme and become enveloped in the details to the extent that they can no longer see the big picture. An INFJ who has gone the route of becoming meticulous about details may be highly critical of other individuals who are not.\n
                                         The INFJ individual is gifted in ways that other types are not. Life is not necessarily easy for the INFJ, but they are capable of great depth of feeling and personal achievement.",
                       short_description: "Seek meaning and connection in ideas, relationships, and material possessions. Want to understand what motivates people and are insightful about others. Conscientious and committed to their firm values. Develop a clear vision about how best to serve the common good. Organized and decisive in implementing their vision.",
-                      catchphrase: "The Counselor/The Protector")
+                      catchphrase: "The Counselor/The Protector",
+                      famous_people: "Martin Van Buren, Nathaniel Hawthorne, Mahatma Gandhi, Aristophanes, Chaucer, Goethe, Robert Burns, Shirley Temple Black, Tom Selleck, Billy Crystal, James Reston, Nelson Mandela, Mel Gibson, Carrie Fisher, Nicole Kidman, Gillian Anderson")
 
     Personality.create(MBPT: 'ISTJ',
                       full_description: "As an ISTJ, your primary mode of living is focused internally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is external, where you deal with things rationally and logically.\n
@@ -87,7 +93,8 @@ class Seed
                                         Under stress, ISTJs may fall into 'catastrophe mode', where they see nothing but all of the possibilities of what could go wrong. They will berate themselves for things which they should have done differently, or duties which they failed to perform. They will lose their ability to see things calmly and reasonably, and will depress themselves with their visions of doom.\n
                                         In general, the ISTJ has a tremendous amount of potential. Capable, logical, reasonable, and effective individuals with a deeply driven desire to promote security and peaceful living, the ISTJ has what it takes to be highly effective at achieving their chosen goals - whatever they may be.",
                       short_description: "Quiet, serious, earn success by thoroughness and dependability. Practical, matter-of-fact, realistic, and responsible. Decide logically what should be done and work toward it steadily, regardless of distractions. Take pleasure in making everything orderly and organized - their work, their home, their life. Value traditions and loyalty.",
-                      catchphrase: "The Pragmatist/The Duty Fulfiller")
+                      catchphrase: "The Pragmatist/The Duty Fulfiller",
+                      famous_people: "George Washington, Andrew Johnson, Benjamin Harrison, Herbert Hoover, George H. W. Bush, Natalie Portman, Evander Holyfield, Warren Buffet, Harry Truman, Queen Elizabeth II, Sean Connery")
 
     Personality.create(MBPT: "ISFJ",
                       full_description: "As an ISFJ, your primary mode of living is focused internally, where you takes things in via your five senses in a literal, concrete fashion. Your secondary mode is external, where you deal with things according to how you feel about them, or how they fit into your personal value system.\n
@@ -102,7 +109,9 @@ class Seed
                                         ISFJs need positive feedback from others. In the absence of positive feedback, or in the face of criticism, the ISFJ gets discouraged, and may even become depressed. When down on themselves or under great stress, the ISFJ begins to imagine all of the things that might go critically wrong in their life. They have strong feelings of inadequacy, and become convinced that 'everything is all wrong', or 'I can/'t do anything right'.\n
                                         The ISFJ is warm, generous, and dependable. They have many special gifts to offer, in their sensitivity to others, and their strong ability to keep things running smoothly. They need to remember to not be overly critical of themselves, and to give themselves some of the warmth and love which they freely dispense to others.",
                       short_description: "Quiet, friendly, responsible, and conscientious. Committed and steady in meeting their obligations. Thorough, painstaking, and accurate. Loyal, considerate, notice and remember specifics about people who are important to them, concerned with how others feel. Strive to create an orderly and harmonious environment at work and at home.",
-                      catchphrase: "ISFJ - The Nurturer/The Defender")
+                      catchphrase: "ISFJ - The Nurturer/The Defender",
+                      famous_people: "Louisa May Alcott, Alfred, Lord Tennyson, Barbara Bush, Robert E. Lee, Queen Mary I, Mother Theresa, 50 Cent, Anthony Hopkins")
+
 
     Personality.create(MBPT: "ISTP",
                       full_description: "As an ISTP, your primary mode of living is focused internally, where you deal with things rationally and logically. Your secondary mode is external, where you take things in via your five senses in a literal, concrete fashion.\n
@@ -117,7 +126,9 @@ class Seed
                                         ISTPs have a lot of natural ability which makes them good at many different kinds of things. However, they are happiest when they are centered in action-oriented tasks which require detailed logical analysis and technical skill. They take pride in their ability to take the next correct step.\n
                                         ISTPs are optimistic, full of good cheer, loyal to their equals, uncomplicated in their desires, generous, trusting and receptive people who want no part in confining commitments.",
                       short_description: "Tolerant and flexible, quiet observers until a problem appears, then act quickly to find workable solutions. Analyze what makes things work and readily get through large amounts of data to isolate the core of practical problems. Interested in cause and effect, organize facts using logical principles, value efficiency.",
-                      catchphrase: "The Mechanic/The Craftsman")
+                      catchphrase: "The Mechanic/The Craftsman",
+                      famous_people: "Zachary Taylor, Charles Bronson, Tom Cruise, James Dean, Clint Eastwood, Burt Reynolds, Keith Richards, Frank Zappa, John Malkovich, Alan Shepherd, Michael Jordan, Bruce Lee, Harrison Ford")
+
 
     Personality.create(MBPT: "ISFP",
                       full_description: "As an ISFP, your primary mode of living is focused internally, where you deal with things according to how you feel about them, or how they fit into your value system. Your secondary mode is external, where you take things in via your five sense in a literal, concrete fashion.\n
@@ -131,7 +142,9 @@ class Seed
                                         The ISFP is likely to not give themself enough credit for the things which they do extremely well. Their strong value systems can lead them to be intensely perfectionist, and cause them to judge themselves with unneccesary harshness.\n
                                         The ISFP has many special gifts for the world, especially in the areas of creating artistic sensation, and selflessly serving others. Life is not likely to be extremely easy for the ISFP, because they take life so seriously, but they have the tools to make their lives and the lives of those close to them richly rewarding experiences.",
                       short_description: "Quiet, friendly, sensitive, and kind. Enjoy the present moment, what's going on around them. Like to have their own space and to work within their own time frame. Loyal and committed to their values and to people who are important to them. Dislike disagreements and conflicts, do not force their opinions or values on others.",
-                      catchphrase: "The Peacemaker/The Artist")
+                      catchphrase: "The Peacemaker/The Artist",
+                      famous_people: "Michael Jackson, Millard Fillmore, Brad Pitt, Ulysses S. Grant, Marie Antoinette, Jacqueline Kennedy Onassis, Wolfgang Amadeus Mozart, Auguste Rodin, Barbara Streisand, Steven Spielberg, Doris Day, Liberace, Kevin Costner, John Travolta, Rihanna")
+
 
     Personality.create(MBPT: "INFP",
                       full_description: "As an INFP, your primary mode of living is focused internally, where you deal with things according to how you feel about them, or how they fit into your personal value system. Your secondary mode is external, where you take things in primarily via your intuition.\n
@@ -146,7 +159,8 @@ class Seed
                                         INFPs are usually talented writers. They may be awkard and uncomfortable with expressing themselves verbally, but have a wonderful ability to define and express what they're feeling on paper. INFPs also appear frequently in social service professions, such as counselling or teaching. They are at their best in situations where they're working towards the public good, and in which they don't need to use hard logic.\n
                                         INFPs who function in their well-developed sides can accomplish great and wonderful things, which they will rarely give themselves credit for. Some of the great, humanistic catalysts in the world have been INFPs.",
                       short_description: "Idealistic, loyal to their values and to people who are important to them. Want an external life that is congruent with their values. Curious, quick to see possibilities, can be catalysts for implementing ideas. Seek to understand people and to help them fulfill their potential. Adaptable, flexible, and accepting unless a value is threatened.",
-                      catchphrase: "The Romantic/The Idealist")
+                      catchphrase: "The Romantic/The Idealist",
+                      famous_people: "Virgil, William Shakespeare, Henry Wadsworth Longfellow, Laura Ingalls Wilder, Helen Keller, Fred Rogers, Dick Clark, John F. Kennedy, Jr., Neil Diamond, James Herriot, Audrey Hepburn, George Orwell, Princess Diana, Aldous Huxley, Isabel Briggs Myers, Peter Jackson, J. R. R. Tolkien, Albert Schweitzer, J.K. Rowling")
 
     Personality.create(MBPT: "INTP",
                       full_description: "As an INTP, your primary mode of living is focused internally, where you deal with things rationally and logically. Your secondary mode is external, where you take things in primarily via your intuition.\n
@@ -159,7 +173,10 @@ class Seed
                                         The INTP is usually very independent, unconventional, and original. They are not likely to place much value on traditional goals such as popularity and security. They usually have complex characters, and may tend to be restless and temperamental. They are strongly ingenious, and have unconventional thought patterns which allows them to analyze ideas in new ways. Consequently, a lot of scientific breakthroughs in the world have been made by the INTP.\n
                                         The INTP is at his best when he can work on his theories independently. When given an environment which supports his creative genius and possible eccentricity, the INTP can accomplish truly remarkable things. These are the pioneers of new thoughts in our society.",
                       short_description: "Seek to develop logical explanations for everything that interests them. Theoretical and abstract, interested more in ideas than in social interaction. Quiet, contained, flexible, and adaptable. Have unusual ability to focus in depth to solve problems in their area of interest. Skeptical, sometimes critical, always analytical.",
-                      catchphrase: "The Thinker/The Architect")
+                      catchphrase: "The Thinker/The Architect",
+                      famous_people: "Abraham Lincoln, James Madison, John Quincy Adams, John Tyler, Gerald Ford, William Harvey, Charles Darwin, Rene Descartes, Albert Einstein, Blaise Pascal, Socrates, Carl Jung, William James, Meryl Streep, Bob Newhart, Brent Spiner, Tina Fey, Paul Allen")
+
+
 
     Personality.create(MBPT: "ESTP",
                       full_description: "As an ESTP, your primary mode of living is focused externally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is internal, where you deal with things rationally and logically.\n
@@ -171,10 +188,10 @@ class Seed
                                         The ESTP needs to keep moving, and so does well in careers where he or she is not restricted or confined. ESTPs make extremely good salespersons. They will become stifled and unhappy dealing with routine chores. ESTPs have a natural abundance of energy and enthusiasm, which makes them natural entrepreneurs. They get very excited about things, and have the ability to motivate others to excitement and action. The can sell anyone on any idea. They are action-oriented, and make decisions quickly. All-in-all, they have extraordinary talents for getting things started. They are not usually so good at following through, and might leave those tasks to others. Mastering the art of following through is something which ESTPs should pay special attention to.\n
                                         ESTPs are practical, observant, fun-loving, spontaneous risk-takers with an excellent ability to quickly improvise an innovative solution to a problem. They\'re enthusiastic and fun to be with, and are great motivators. If an ESTP recognizes their real talents and operates within those realms, they can accomplish truly exciting things.",
                       short_description: "Flexible and tolerant, they take a pragmatic approach focused on immediate results. Theories and conceptual explanations bore them - they want to act energetically to solve the problem. Focus on the here-and-now, spontaneous, enjoy each moment that they can be active with others. Enjoy material comforts and style. Learn best through doing.",
-                      catchphrase: "The Promoter/The Doer" )
+                      catchphrase: "The Promoter/The Doer",
+                      famous_people: "James Buchanan, Jack Nicholson, Madonna, Winston Churchill, Ernest Hemingway, Lucille Ball, Eddie Murphy, Ann Jillian, Cybil Shepherd, Bruce Willis, Michael J. Fox, Donald Trump, Joan Cusack")
 
     Personality.create(MBPT: "ESFP",
-
                         full_description: "As an ESFP, your primary mode of living is focused externally, where you take things in via your five senses in a literal, concrete fashion. Your secondary mode is internal, where you deal with things according to how you feel about them, or how they fit with your personal value system.\n
                                           ESFPs live in the world of people possibilties. They love people and new experiences. They are lively and fun, and enjoy being the center of attention. They live in the here-and-now, and relish excitement and drama in their lives.\n
                                           ESFPs have very strong inter-personal skills, and may find themselves in the role of the peacemaker frequently. Since they make decisions by using their personal values, they are usually very sympathetic and concerned for other people's well-being. They're usually quite generous and warm. They are very observant about other people, and seem to sense what is wrong with someone before others might, responding warmly with a solution to a practical need. They might not be the best advice-givers in the world, because they dislike theory and future-planning, but they are great for giving practical care.\n
@@ -188,7 +205,8 @@ class Seed
                                           ESFPs usually like to feel strongly bonded with other people, and have a connection with animals and small children that is not found in most other types. They're likely to have a strong appreciation for the beauties of nature as well.\n
                                           The ESFP has a tremendous love for life, and knows how to have fun. They like to bring others along on their fun-rides, and are typically a lot of fun to be with. They're flexible, adaptable, genuinely interested in people, and usually kind-hearted. They have a special ability to get a lot of fun out of life, but they need to watch out for the pitfalls associated with living entirely in the moment.",
                         short_description: "Outgoing, friendly, and accepting. Exuberant lovers of life, people, and material comforts. Enjoy working with others to make things happen. Bring common sense and a realistic approach to their work, and make work fun. Flexible and spontaneous, adapt readily to new people and environments. Learn best by trying a new skill with other people.",
-                        catchphrase: "The Performer/The Artist")
+                        catchphrase: "The Performer/The Artist",
+                        famous_people: "Ronald Reagan, Bill Clinton, Leonardo Dicaprio, Pablo Picasso, John Goodman, Marilyn Monroe, Bob Hope, Quentin Tarantino, Eva Gabor, Arsenio Hall, Mary Lou Retton, Kathy Lee Gifford, Elvis Presley, Elizabeth Taylor")
 
     Personality.create(MBPT: "ESFJ",
                       full_description: "As an ESFJ, your primary mode of living is focused externally, where you deal with things according to how you feel about them, or how they fit in with your personal value system. Your secondary mode is internal, where you take things in via your five senses in a literal, concrete fashion.\n
@@ -204,7 +222,8 @@ class Seed
                                         ESFJs incorporate many of the traits that are associated with women in our society. However, male ESFJs will usually not appear feminine at all. On the contrary, ESFJs are typically quite conscious about gender roles and will be most comfortable playing a role that suits their gender in our society. Male ESFJs will be quite masculine (albeit sensitive when you get to know them), and female ESFJs will be very feminine.\n
                                         ESFJs at their best are warm, sympathetic, helpful, cooperative, tactful, down-to-earth, practical, thorough, consistent, organized, enthusiastic, and energetic. They enjoy tradition and security, and will seek stable lives that are rich in contact with friends and family.",
                       short_description: "Warmhearted, conscientious, and cooperative. Want harmony in their environment, work with determination to establish it. Like to work with others to complete tasks accurately and on time. Loyal, follow through even in small matters. Notice what others need in their day-by-day lives and try to provide it. Want to be appreciated for who they are and for what they contribute.",
-                      catchphrase: "The Caregiver/The Enthusiast")
+                      catchphrase: "The Caregiver/The Enthusiast",
+                      famous_people: "Prince William, Mariah Carey, Elton John, Larry King, Sarah Palin, William McKinley, Sally Struthers, Sally Field, Jack Benny, Desi Arnaz, Mary Tyler Moore, Danny Glover")
 
     Personality.create(MBPT: "ENTP",
                       full_description: "As an ENTP, your primary mode of living is focused externally, where you take things in primarily via your intuition. Your secondary mode is internal, where you deal with things rationally and logically.\n
@@ -219,7 +238,8 @@ class Seed
                                         Under stress, the ENTP may lose their ability to generate possibilities, and become obsessed with minor details. These details may seem to be extremely important to the ENTP, but in reality are usually not important to the big picture.\n
                                         In general, ENTPs are upbeat visionaries. They highly value knowledge, and spend much of their lives seeking a higher understanding. They live in the world of possibilities, and become excited about concepts, challenges and difficulties. When presented with a problem, they're good at improvising and quickly come up with a creative solution. Creative, clever, curious, and theoretical, ENTPs have a broad range of possibilities in their lives.",
                       short_description: "Quick, ingenious, stimulating, alert, and outspoken. Resourceful in solving new and challenging problems. Adept at generating conceptual possibilities and then analyzing them strategically. Good at reading other people. Bored by routine, will seldom do the same thing the same way, apt to turn to one new interest after another.",
-                      catchphrase: "The Visionary/The Inventor" )
+                      catchphrase: "The Visionary/The Inventor",
+                      famous_people: "Benjamin Franklin, Alexander the Great, Leonardo da Vinci, Sir Walter Raleigh, Walt Disney, Richard Feynman, Nikola Tesla, John Adams, James A. Garfield, Theodore Roosevelt, Thomas Edison, Lewis Carroll, George Carlin, Weird Al Yankovic, Alfred Hitchcock, Tom Hanks, Rodney Dangerfield")
 
     Personality.create(MBPT: "ESTJ",
                       full_description: "As an ESTJ, your primary mode of living is focused externally, where you deal with things rationally and logically. Your secondary mode is internal, where you take things in via your five senses in a literal, concrete fashion.\n
@@ -231,7 +251,9 @@ class Seed
                                         ESTJs value security and social order above all else, and feel obligated to do all that they can to enhance and promote these goals. They will mow the lawn, vote, join the PTA, attend home owners association meetings, and generally do anything that they can to promote personal and social security.\n
                                         The ESTJ puts forth a lot of effort in almost everything that they do. They will do everything that they think should be done in their job, marriage, and community with a good amount of energy. He or she is conscientious, practical, realistic, and dependable. While the ESTJ will dutifully do everything that is important to work towards a particular cause or goal, they might not naturally see or value the importance of goals which are outside of their practical scope. However, if the ESTJ is able to see the relevance of such goals to practical concerns, you can bet that they'll put every effort into understanding them and incorporating them into their quest for clarity and security.",
                       short_description: "Practical, realistic, matter-of-fact. Decisive, quickly move to implement decisions. Organize projects and people to get things done, focus on getting results in the most efficient way possible. Take care of routine details. Have a clear set of logical standards, systematically follow them and want others to also. Forceful in implementing their plans.",
-                      catchphrase: "The Supervisor/The Director")
+                      catchphrase: "The Supervisor/The Director",
+                      famous_people: "Lyndon B. Johnson, James Monroe, Andrew Jackson, William Henry Harrison, Grover Cleveland, John D. Rockefeller, Sam Walton, Rev. Billy Graham, George W. Bush, Martha Stewart, Michelle Obama, Bill O'Reilly")
+
 
     Personality.create(MBPT: 'ENTJ',
                       full_description: "As an ENTJ, your primary mode of living is focused externally, where you deal with things rationally and logically. Your secondary mode is internal, where you take things in primarily via your intuition.\n
@@ -245,7 +267,121 @@ class Seed
                                         ENTJs want their home to be beautiful, well-furnished, and efficiently run. They're likely to place much emphasis on their children being well-educated and structured, to desire a congenial and devoted relationship with their spouse. At home, the ENTJ needs to be in charge as much as he or she does in their career. The ENTJ is likely best paired with someone who has a strong self-image, who is also a Thinking type. Because the ENTJ is primarily focused on their careers, some ENTJs have a problem with being constantly absent from home, physically or mentally.\n
                                         The ENTJ has many gifts which make it possible for them to have a great deal of personal power, if they don't forget to remain balanced in their lives. They are assertive, innovative, long-range thinkers with an excellent ability to translate theories and possibilities into solid plans of action. They are usually tremendously forceful personalities, and have the tools to accomplish whatever goals they set out for.",
                       short_description: "Frank, decisive, assume leadership readily. Quickly see illogical and inefficient procedures and policies, develop and implement comprehensive systems to solve organizational problems. Enjoy long-term planning and goal setting. Usually well informed, well read, enjoy expanding their knowledge and passing it on to others. Forceful in presenting their ideas.",
-                      catchphrase: "The Executive/The Pioneer")
+                      catchphrase: "The Executive/The Pioneer",
+                      famous_people: "Franklin D. Roosevelt, Richard Nixon, Harrison Ford, Matt Damon, George Clooney, Julius Caesar, Steve Martin, Margaret Thatcher, Dave Letterman, Newt Gingrich, Jim Carrey, Bill Gates, Benny Goodman, Sigourney Weaver, Al Gore, Candace Bergen, Patrick Stewart, Edward Teller")
+  end
+
+  def create_functions
+    id1 = Personality.find_by(MBPT: 'ENFJ').id
+    Function.create(personality_id: id1,
+          Dominant: "Extraverted Feeling",
+          Auxiliary: "Introverted Intuition",
+          Tertiary: "Extraverted Sensing",
+          Inferior: "Introverted Thinking")
+
+    id2 = Personality.find_by(MBPT: 'ENFP').id
+    Function.create(personality_id: id2,
+          Dominant: "Extraverted Intuition",
+          Auxiliary: "Introverted Feeling",
+          Tertiary: "Extraverted Thinking",
+          Inferior: "Introverted Sensing")
+
+    id3 = Personality.find_by(MBPT: 'ENTJ').id
+    Function.create(personality_id: id3,
+              Dominant: "Extraverted Thinking",
+          Auxiliary: "Introverted Intuition",
+          Tertiary: "Extraverted Sensing",
+          Inferior: "Introverted Feeling")
+
+    id4 = Personality.find_by(MBPT: 'ENTP').id
+    Function.create(personality_id: id4,
+              Dominant: "Extraverted Intuition",
+          Auxiliary: "Introverted Thinking",
+          Tertiary: "Extraverted Feeling",
+          Inferior: "Introverted Sensing")
+
+    id5 = Personality.find_by(MBPT: 'ESFJ').id
+    Function.create(personality_id: id5,
+              Dominant: "Extraverted Feeling",
+          Auxiliary: "Introverted Sensing",
+          Tertiary: "Extraverted Intuition",
+          Inferior: "Introverted Thinking")
+
+    id6 = Personality.find_by(MBPT: 'ESFP').id
+    Function.create(personality_id: id6,
+              Dominant: "Extraverted Sensing",
+          Auxiliary: "Introverted Feeling",
+          Tertiary: "Extraverted Thinking",
+          Inferior: "Introverted Intuition")
+
+    id7 = Personality.find_by(MBPT: 'ESTJ').id
+    Function.create(personality_id: id7,
+              Dominant: "Extraverted Thinking",
+          Auxiliary: "Introverted Sensing",
+          Tertiary: "Extraverted Intuition",
+          Inferior: "Introverted Feeling")
+
+    id8 = Personality.find_by(MBPT: 'ESTP').id
+    Function.create(personality_id: id8,
+              Dominant: "Extraverted Sensing",
+          Auxiliary: "Introverted Thinking",
+          Tertiary: "Extraverted Feeling",
+          Inferior: "Introverted Intuition")
+
+    id9 = Personality.find_by(MBPT: 'INFJ').id
+    Function.create(personality_id: id9,
+              Dominant: "Introverted Intuition",
+          Auxiliary: "Extraverted Feeling",
+          Tertiary: "Introverted Thinking",
+          Inferior: "Extraverted Sensing")
+
+    id10 = Personality.find_by(MBPT: 'INFP').id
+    Function.create(personality_id: id10,
+          Dominant: "Introverted Feeling",
+          Auxiliary: "Extraverted Intuition",
+          Tertiary: "Introverted Sensing",
+          Inferior: "Extraverted Thinking")
+
+    id11 = Personality.find_by(MBPT: 'INTJ').id
+    Function.create(personality_id: id11,
+          Dominant: "Introverted Intuition",
+          Auxiliary: "Extraverted Thinking",
+          Tertiary: "Introverted Feeling",
+          Inferior: "Extraverted Sensing")
+
+    id12 = Personality.find_by(MBPT: 'INTP').id
+    Function.create(personality_id: id12,
+          Dominant: "Introverted Thinking",
+          Auxiliary: "Extraverted Intuition",
+          Tertiary: "Introverted Sensing",
+          Inferior: "Extraverted Feeling")
+    id13 = Personality.find_by(MBPT: 'ISFJ').id
+    Function.create(personality_id: id13,
+          Dominant: "Introverted Sensing",
+          Auxiliary: "Extraverted Feeling",
+          Tertiary: "Introverted Thinking",
+          Inferior: "Extraverted Intuition")
+
+    id14 = Personality.find_by(MBPT: 'ISFP').id
+    Function.create(personality_id: id14,
+          Dominant: "Introverted Feeling",
+          Auxiliary: "Extraverted Sensing",
+          Tertiary: "Introverted Intuition",
+          Inferior: "Extraverted Thinking")
+
+    id15 = Personality.find_by(MBPT: 'ISTJ').id
+    Function.create(personality_id: id15,
+          Dominant: "Introverted Sensing",
+          Auxiliary: "Extraverted Thinking",
+          Tertiary: "Introverted Feeling",
+          Inferior: "Extraverted Intuition")
+
+    id16 = Personality.find_by(MBPT: 'ISTP').id
+    Function.create(personality_id: id16,
+          Dominant: "Introverted Thinking",
+          Auxiliary: "Extraverted Sensing",
+          Tertiary: "Introverted Intuition",
+          Inferior: "Extraverted Feeling")
   end
 
   def self.call

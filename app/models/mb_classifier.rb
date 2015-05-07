@@ -121,34 +121,34 @@ class MBClassifier
   end
 
   def assigning_data_to_user(user)
-    user.introversion             = introversion_parsed['cls1']['Introversion']
-    user.extraversion             = introversion_parsed['cls1']['Extraversion']
-    user.intuition                = intuition_parsed['cls1']['iNtuition']
-    user.sensing                  = intuition_parsed['cls1']['Sensing']
-    user.thinking                 = thinking_parsed['cls1']['Thinking']
-    user.feeling                  = thinking_parsed['cls1']['Feeling']
-    user.judging                  = judging_parsed['cls1']['Judging']
-    user.perceiving               = judging_parsed['cls1']['Perceiving']
-    user.negative_sentiment       = sentiment_parsed['cls1']['upset']
-    user.postive_sentiment        = sentiment_parsed['cls1']['happy']
+    user.introversion             = (introversion_parsed['cls1']['Introversion']) * 100
+    user.extraversion             = (introversion_parsed['cls1']['Extraversion']) * 100
+    user.intuition                = (intuition_parsed['cls1']['iNtuition']) * 100
+    user.sensing                  = (intuition_parsed['cls1']['Sensing']) * 100
+    user.thinking                 = (thinking_parsed['cls1']['Thinking']) * 100
+    user.feeling                  = (thinking_parsed['cls1']['Feeling']) * 100
+    user.judging                  = (judging_parsed['cls1']['Judging']) * 100
+    user.perceiving               = (judging_parsed['cls1']['Perceiving']) * 100
+    user.negative_sentiment       = (sentiment_parsed['cls1']['upset']) * 100
+    user.positive_sentiment       = (sentiment_parsed['cls1']['happy']) * 100
 
-    user.topic_arts               = topic_parsed['cls1']['Arts']
-    user.topic_business           = topic_parsed['cls1']['Business']
-    user.topic_computers          = topic_parsed['cls1']['Computers']
-    user.topic_games              = topic_parsed['cls1']['Games']
-    user.topic_health             = topic_parsed['cls1']['Health']
-    user.topic_home               = topic_parsed['cls1']['Home']
-    user.topic_recreation         = topic_parsed['cls1']['Recreation']
-    user.topic_science            = topic_parsed['cls1']['Science']
-    user.topic_society            = topic_parsed['cls1']['Society']
-    user.topic_sports             = topic_parsed['cls1']['Sports']
+    user.topic_arts               = (topic_parsed['cls1']['Arts']) * 100
+    user.topic_business           = (topic_parsed['cls1']['Business']) * 100
+    user.topic_computers          = (topic_parsed['cls1']['Computers']) * 100
+    user.topic_games              = (topic_parsed['cls1']['Games']) * 100
+    user.topic_health             = (topic_parsed['cls1']['Health']) * 100
+    user.topic_home               = (topic_parsed['cls1']['Home']) * 100
+    user.topic_recreation         = (topic_parsed['cls1']['Recreation']) * 100
+    user.topic_science            = (topic_parsed['cls1']['Science']) * 100
+    user.topic_society            = (topic_parsed['cls1']['Society']) * 100
+    user.topic_sports             = (topic_parsed['cls1']['Sports']) * 100
 
-    user.age_group1               = age_parsed['cls1']['13-17']
-    user.age_group2               = age_parsed['cls1']['18-25']
-    user.age_group3               = age_parsed['cls1']['26-35']
-    user.age_group4               = age_parsed['cls1']['36-50']
-    user.age_group5               = age_parsed['cls1']['51-65']
-    user.age_group6               = age_parsed['cls1']['65-100']
+    user.age_group1               = (age_parsed['cls1']['13-17']) * 100
+    user.age_group2               = (age_parsed['cls1']['18-25']) * 100
+    user.age_group3               = (age_parsed['cls1']['26-35']) * 100
+    user.age_group4               = (age_parsed['cls1']['36-50']) * 100
+    user.age_group5               = (age_parsed['cls1']['51-65']) * 100
+    user.age_group6               = (age_parsed['cls1']['65-100']) * 100
 
     user.save
     user

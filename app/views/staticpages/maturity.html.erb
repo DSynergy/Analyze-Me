@@ -1,0 +1,22 @@
+<div class="side-image">
+  <div class="images-wrapper">
+  </div>
+    <div class="side-image-content">
+      <h4>The Age Analyzer</h4>
+      <p>This classifier tries to estimate to which age group a blog belongs. The training data is based upon about 7000 blogs collected randomly from Internet.</p>
+      <p>The <a href="http://www.uclassify.com/browse/uClassify/Ageanalyzer">API</a> can be found here.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.side-image .images-wrapper {
+    background: url(<%= image_path("background_images/#{randomized_background_image}.JPG")%>) no-repeat;
+    display: table-cell;
+    width: 33.3333%;
+    background-position: center bottom;
+    background-size: cover;
+    border-right: 1px solid rgba(38, 74, 38, 0.2);
+}
+
+</style>

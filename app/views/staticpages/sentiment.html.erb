@@ -1,0 +1,22 @@
+<div class="side-image">
+  <div class="images-wrapper">
+  </div>
+    <div class="side-image-content">
+      <h4>The Sentiment Analyzer</h4>
+      <p>This classifier determines if a text is positive or negative. It's based on about 40000 Amazon product reviews (collected by Mark Dredze) and mood training data (by mattiasostmar.net).</p>
+      <p>The <a href="http://www.uclassify.com/browse/uClassify/Sentiment">API</a> can be found here.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.side-image .images-wrapper {
+    background: url(<%= image_path("background_images/#{randomized_background_image}.JPG")%>) no-repeat;
+    display: table-cell;
+    width: 33.3333%;
+    background-position: center bottom;
+    background-size: cover;
+    border-right: 1px solid rgba(38, 74, 38, 0.2);
+}
+
+</style>

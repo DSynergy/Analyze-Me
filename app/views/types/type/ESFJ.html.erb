@@ -2,17 +2,25 @@
   <div class="images-wrapper"></div>
     <div class="side-image-content">
       <h4><%=@personality.catchphrase%></h4>
+      <br>
       <h1><%=@personality.MBPT%></h1>
-      <h5>Jungian functional preferences</h5>
-      <ul>
-        <li>Dominant: Extraverted Feeling</li>
-        <li>Auxiliary: Introverted Sensing</li>
-        <li>Tertiary: Extraverted Intuition</li>
-        <li>Inferior: Introverted Thinking</li>
-      </ul>
+      <br>
+      <div>
+        <h4>Your Jungian Functional Preferences</h4>
+          <ul>
+            <li>Your Dominant Function: <%= @personality.function.Dominant %></li>
+            <li>Your Auxiliary Function: <%= @personality.function.Auxiliary %></li>
+            <li>Your Tertiary Function: <%= @personality.function.Tertiary %></li>
+            <li>Your Inferior Function: <%= @personality.function.Inferior %></li>
+          </ul>
+        <br>
+        <p>For more info checkout out the <a href="/background">background</a> on the Myers-Briggs functions</p>
+      </div>
+      <h4>Full Description</h4>
       <p><%=simple_format(@personality.full_description)%></p>
-      <p>Famous people of this type:</p>
-      <p>Average happiness index</p>
+
+      <h4>Famous people of this type:</h4>
+      <p><%= @personality.famous_people %></p>
     </div>
   </div>
 </div>
@@ -29,5 +37,4 @@
     background-size: cover;
     border-right: 1px solid rgba(38, 74, 38, 0.2);
 }
-
 </style>

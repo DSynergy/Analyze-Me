@@ -7,11 +7,12 @@ class UsersController < ApplicationController
   def create
     user = User.find_or_create_by(id: current_user.id)
     MBClassifier.new.categorize_user(user)
-    # MBResult.calculate_personality(user)
+    MBResult.new.calculate_personality(user)
 
-    if user
+    if user.personality
+      @user = user
       redirect_to user_path(user.id)
-      flash[:notice] = "You are an #{current_user.type}!"
+      flash[:notice] = "You are an #{user.personality.MBPT}!"
     else
       redirect_to user_path(user.id)
       flash[:alert] = "Something strange happened. Please try again?"
@@ -22,6 +23,5 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
 
 end

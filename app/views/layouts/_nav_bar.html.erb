@@ -10,8 +10,10 @@
         <li class="nav-link"><a href="/about">About</a></li>
         <li class="nav-link more"><a href="#">The APIs</a>
           <ul class="submenu">
-            <li><a href="/typealyzer">The Myers-Briggs APIs</a></li>
-            <li><a href="/hedonometer">The Hedonometer</a></li>
+            <li><a href="/apis/myers-briggs">The Myers-Briggs APIs</a></li>
+            <li><a href="/apis/sentiment">The Sentiment Analyzer</a></li>
+            <li><a href="/apis/maturity">The Maturity Analyzer</a></li>
+            <li><a href="/apis/topic">The Topic Analyzer</a></li>
           </ul>
         <li class="nav-link"><a href="/types/type">The 16 types</a></li>
         <li class="nav-link more"><a href="#">The Types Indepth</a>
@@ -38,16 +40,6 @@
     </nav>
 
     <div class="navigation-tools">
-      <div class="search-bar">
-        <div class='dynamic_search' data-search="<#%= { types }.to_json %>">
-          <%= form_tag('#', :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "types", class: "typeahead"%>
-            <button type="submit">
-              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
-            </button>
-          <% end %>
-        </div>
-      </div>
       <% if current_user %>
         <%= link_to "Your Profile", user_path(current_user.id), class: "sign-up" %>
         <%= link_to "Log Out", logout_path, method: :destroy, class: "sign-up" %>

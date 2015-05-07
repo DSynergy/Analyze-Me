@@ -30,7 +30,7 @@ class AddMoreColumnsToUsers < ActiveRecord::Migration
     add_column :users, :age_group5,         :float
     add_column :users, :age_group6,         :float
 
-    add_column :users, :personalities_id, :integer
-    add_index :users, :personalities_id
+    add_column :users, :personality_id, :integer
+    add_index :users, :personality_id
   end
 end

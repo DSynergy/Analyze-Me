@@ -28,12 +28,14 @@ Rails.application.routes.draw do
 
   get 'about',               to: 'staticpages#about'
   get 'background',          to: 'staticpages#background'
-  get 'hedonometer',         to: 'staticpages#hedonometer'
   get 'dashboard',           to: 'staticpages#dashboard'
-  get 'typealyzer',          to: 'staticpages#typealyzer'
   get 'me',                  to: "staticpages#me"
   get 'privacy',             to: "staticpages#privacy"
 
+  get 'apis/sentiment',      to: 'staticpages#sentiment'
+  get 'apis/myers-briggs',   to: 'staticpages#myers_briggs'
+  get 'apis/maturity',       to: 'staticpages#maturity'
+  get 'apis/topic',          to: 'staticpages#topic'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

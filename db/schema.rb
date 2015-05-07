@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505002416) do
+ActiveRecord::Schema.define(version: 20150507024818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "functions", force: :cascade do |t|
+    t.string   "Dominant"
+    t.string   "Auxiliary"
+    t.string   "Tertiary"
+    t.string   "Inferior"
+    t.integer  "personality_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "mb_results", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150505002416) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "catchphrase"
+    t.string   "famous_people"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -60,7 +71,6 @@ ActiveRecord::Schema.define(version: 20150505002416) do
     t.datetime "updated_at",         null: false
     t.string   "link"
     t.string   "gender"
-    t.string   "type"
     t.string   "nickname"
     t.string   "location"
     t.string   "description"
@@ -75,7 +85,7 @@ ActiveRecord::Schema.define(version: 20150505002416) do
     t.float    "judging"
     t.float    "perceiving"
     t.float    "negative_sentiment"
-    t.float    "postive_sentiment"
+    t.float    "positive_sentiment"
     t.float    "topic_arts"
     t.float    "topic_business"
     t.float    "topic_computers"
@@ -92,9 +102,9 @@ ActiveRecord::Schema.define(version: 20150505002416) do
     t.float    "age_group4"
     t.float    "age_group5"
     t.float    "age_group6"
-    t.integer  "personalities_id"
+    t.integer  "personality_id"
   end
 
-  add_index "users", ["personalities_id"], name: "index_users_on_personalities_id", using: :btree
+  add_index "users", ["personality_id"], name: "index_users_on_personality_id", using: :btree
 
 end

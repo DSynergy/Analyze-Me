@@ -4,42 +4,188 @@
 
       <h4><%=image_tag(@user.image) %> Welcome <%=@user.name if @user.name%> - <%= @user.nickname if @user.nickname %></h4>
     </br>
-    </br>
-    </br>
-      <% if @user.type %>
-        <h1>Your type is <%=@user.type%></h1>
-         <%= form_for User.new do |form| %>
-         <h1><%= form.submit "Analyze Again!"%></h1>
-         <% end %>
-       <% else %>
+       <% if !@user.personality %>
          <%= form_for User.new do |form| %>
          <h1><%= form.submit "Analyze Me!"%></h1>
          <% end %>
        <% end %>
-    </br>
-    </br>
-    <h4>About</h4>
-    <p><%= @user.description %></p>
 
-    <div class ="recent tweets">
-    <h4>Your last 20 tweets:</h4>
-      <ol>
-        <% @user.tweets.limit(20).each do |tweet| %>
-        <li>-<%= auto_link((tweet.tweet)) %></li>
-        <% end %>
-      </ol>
+    <% if @user.personality %>
+      <h1>You are an <%= @user.personality.MBPT %>! - <%= @user.personality.catchphrase %></h1>
+        <%= form_for User.new do |form| %>
+        <h1><%= form.submit "Analyze Again?!"%></h1>
+      <% end %>
+      <br>
+      <div class="modal">
+        <label for="modal-1">
+          <div class="modal-trigger">Click for Full Description of Your Type</div>
+        </label>
+        <input class="modal-state" id="modal-1" type="checkbox" />
+        <div class="modal-fade-screen">
+          <div class="modal-inner">
+            <div class="modal-close" for="modal-1"></div>
+            <h1><%= @user.personality.MBPT %></h1>
+            <p class="modal-intro"><%= @user.personality.catchphrase %></p>
+            <p class="modal-content"><%=simple_format(@user.personality.full_description)%></p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div>
+        <h2><%=@user.personality.MBPT%>'s:</h2>
+        <%=simple_format(@user.personality.short_description)%>
+        <br>
+      </div>
+
+      <div>
+        <h4>Your Jungian Functional Preferences</h4>
+          <ul>
+            <li>Your Dominant Function: <%= @user.personality.function.Dominant %></li>
+            <li>Your Auxiliary Function: <%= @user.personality.function.Auxiliary %></li>
+            <li>Your Tertiary Function: <%= @user.personality.function.Tertiary %></li>
+            <li>Your Inferior Function: <%= @user.personality.function.Inferior %></li>
+          </ul>
+        <br>
+        <p>For more info checkout out the <a href="/background">background</a> on the Myers-Briggs functions</p>
+      </div>
+
+      <h4>Your Overall Happiness of User Based on Content</h4>
+
+      <div class="progressDiv">
+       <div class="statChartHolder">
+           <div class="progress-pie-chart" data-percent="<%=@user.positive_sentiment%>">
+             <div class="ppc-progress">
+                 <div class="ppc-progress-fill"></div>
+             </div>
+             <div class="ppc-percents">
+             <div class="pcc-percents-wrapper">
+                 <span>%</span>
+             </div>
+             </div>
+         </div>
+         </div>
+         <div class="statRightHolder">
+           <ul>
+             <li> <h3 class="blue"><%=@user.positive_sentiment%>%</h3> <span>Positive Words</span></li>
+             <li> <h3 class="purple"><%=@user.negative_sentiment%>%</h3> <span>Negative words</span></li>
+           </ul>
+          <ul class="statsLeft">
+            <li><h3 class="yellow"></h3> <span></span></li>
+            <li><h3 class="red"></h3> <span></span></li>
+            </ul>
+            <ul class="statsRight">
+                <li><h3></h3> <span></span></li>
+                <li><h3></h3> <span></span></li>
+            </ul>
+          </div>
+        </div>
+      <br>
+
+      <h4>The Percentages of your Personality Type</h4>
+
+      <div id="chart">
+        <ul id="numbers">
+          <li><span>100%</span></li>
+          <li><span>90%</span></li>
+          <li><span>80%</span></li>
+          <li><span>70%</span></li>
+          <li><span>60%</span></li>
+          <li><span>50%</span></li>
+          <li><span>40%</span></li>
+          <li><span>30%</span></li>
+          <li><span>20%</span></li>
+          <li><span>10%</span></li>
+          <li><span>0%</span></li>
+        </ul>
+
+        <ul id="bars">
+          <li><div data-percentage="<%=@user.introversion %>" class="bar"></div><span>Introversion</span></li>
+          <li><div data-percentage="<%=@user.extraversion %>" class="bar"></div><span>Extraversion</span></li>
+          <li><div data-percentage="<%=@user.intuition %>" class="bar"></div><span>Intuition</span></li>
+          <li><div data-percentage="<%=@user.sensing %>" class="bar"></div><span>Sensing</span></li>
+          <li><div data-percentage="<%=@user.thinking %>" class="bar"></div><span>Thinking</span></li>
+          <li><div data-percentage="<%=@user.feeling %>" class="bar"></div><span>Feeling</span></li>
+          <li><div data-percentage="<%=@user.judging %>" class="bar"></div><span>Judging</span></li>
+          <li><div data-percentage="<%=@user.perceiving %>" class="bar"></div><span>Perceiving</span></li>
+
+        </ul>
+      </div>
+      <br>
+
+      <h4>The age-range of your writing style</h4>
+
+      <div id="chart">
+        <ul id="numbers">
+          <li><span>100%</span></li>
+          <li><span>90%</span></li>
+          <li><span>80%</span></li>
+          <li><span>70%</span></li>
+          <li><span>60%</span></li>
+          <li><span>50%</span></li>
+          <li><span>40%</span></li>
+          <li><span>30%</span></li>
+          <li><span>20%</span></li>
+          <li><span>10%</span></li>
+          <li><span>0%</span></li>
+        </ul>
+
+        <ul id="bars">
+          <li><div data-percentage="<%=@user.age_group1 %>" class="bar"></div><span>13-17</span></li>
+          <li><div data-percentage="<%=@user.age_group2 %>" class="bar"></div><span>18-25</span></li>
+          <li><div data-percentage="<%=@user.age_group3 %>" class="bar"></div><span>26-35</span></li>
+          <li><div data-percentage="<%=@user.age_group4 %>" class="bar"></div><span>36-50</span></li>
+          <li><div data-percentage="<%=@user.age_group5 %>" class="bar"></div><span>51-65</span></li>
+          <li><div data-percentage="<%=@user.age_group6 %>" class="bar"></div><span>65-100</span></li>
+        </ul>
+      </div>
+
+      <br>
+      <h4>Your Content by Topic</h4>
+
+      <div id="contenitore">
+        <div class="left">
+
+        <table>
+        <caption>Topics</caption>
+        <tbody>
+          <tr><td>Arts</td><td><%=@user.topic_arts %>%</td></tr>
+          <tr><td>Business</td><td><%=@user.topic_business %>%</td></tr>
+          <tr><td>Computers</td><td><%=@user.topic_computers %>%</td></tr>
+          <tr><td>Games</td><td><%=@user.topic_games %></td></tr>
+          <tr><td>Health</td><td><%=@user.topic_health %>%</td></tr>
+          <tr><td>Home</td><td><%=@user.topic_home%>%</td></tr>
+          <tr><td>Recreation</td><td><%=@user.topic_recreation %>%</td></tr>
+          <tr><td>Science</td><td><%=@user.topic_science %>%</td></tr>
+          <tr><td>Society</td><td><%=@user.topic_society %>%</td></tr>
+          <tr><td>Sports</td><td><%=@user.topic_sports %>%</td></tr>
+        </tbody></table>
+
+
+        <br>
+      </div>
     </div>
-    <br>
-    <h5>Your Jungian functional preferences</h5>
-    <ul>
-      <li>Dominant: Extraverted Feeling	</li>
-      <li>Auxiliary: Introverted Intuition </li>
-      <li>Tertiary: Extraverted Sensing	</li>
-      <li>Inferior: Introverted Thinking </li>
-    </ul>
-    </br>
-      <h5>Famous people of this type</h5>
-      <h5>Average happiness index</h5>
-    </div>
+
+        <h4>Famous people of this type</h4>
+        <p><%= @user.personality.famous_people %></p>
+
+    <% end %>
+
+    <% if !@user.personality %>
+      <hr>
+      <h4>About</h4>
+      <p><%= @user.description %></p>
+
+      <div class="expander">
+        <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Your last 20 tweets</a>
+        <div id="js-expander-content" class="expander-content">
+          <ol>
+            <% @user.tweets.limit(20).each do |tweet| %>
+            <li>•<%= auto_link((tweet.tweet)) %></li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 </div>

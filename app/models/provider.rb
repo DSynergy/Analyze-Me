@@ -1,3 +1,4 @@
 class Provider < ActiveRecord::Base
-  belongs_to :user
+  has_many :users, through: :user_providers
+  has_many :user_providers   
 end

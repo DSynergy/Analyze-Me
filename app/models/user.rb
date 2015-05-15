@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :providers
+  has_many :providers, through: :user_providers
+  has_many :user_providers
   has_many :tweets
   belongs_to :personality
 
@@ -21,8 +22,9 @@ class User < ActiveRecord::Base
   end
 
   def self.find_or_create_from_twitter(data)
-    provider = Provider.find_or_create_by(provider: data.provider, uid: data.uid)
-    user = User.find_or_create_by(provider.user_id)
+    provider = Provider.find_or_create_by(provider: data.provider)
+    user = User.find_or_create_by(uid: data.uid)
+    user.providers << provider
 
     user.nickname = data.info.nickname
     user.name = data.info.name

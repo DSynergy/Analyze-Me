@@ -14,20 +14,10 @@ class TwitterService
     client.search(terms, lang: "en")
   end
 
-  def collect_with_max_id(collection=[], max_id=nil, &block)
-    response = yield(max_id)
-    collection += response
-    response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
-  end
-
   def tweets_by_user(user)
     tweets = []
-    collect_with_max_id do |max_id|
-      options = {count: 200, include_rts: true}
-      options[:max_id] = max_id unless max_id.nil?
-      client.user_timeline(user, options).each do |tweet|
-        tweets << tweet.text
-      end
+    client.user_timeline(user, count: 200).each do |tweet|
+      tweets << tweet.text
     end
     tweets
   end

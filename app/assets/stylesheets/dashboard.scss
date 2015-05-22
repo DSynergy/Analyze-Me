@@ -76,6 +76,16 @@
     .hero-copy {
       text-align: center;
 
+      .sign-up {
+        @include button(flat, $action-color);
+        display: inline;
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 1em;
+        padding: 1em 1em;
+        text-transform: uppercase;
+      }
+
       h1 {
         font-style: italic;
         font-size: 10em;

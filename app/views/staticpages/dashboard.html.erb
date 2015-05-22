@@ -4,10 +4,13 @@
   <div class="copy">
 		<div class="hero-copy">
       <h1>Analyze <b>Me</b></h1>
-		</div>
-      <button><%= link_to "Get Started with Twitter!", "auth/twitter", class: "dash-button" %></button>
-      <button><%= link_to "Get Started with Facebook!", "auth/facebook", class: "dash-button" %></button>
-      <button><a href="/about" class="dash-button",>Learn More</a></button>
+        <form action="/auth/twitter">
+            <input type="submit" value="Get Started with Twitter!", class="dash-button">
+        </form>
+        <form action="/about">
+            <input type="submit" value="Learn More", class="dash-button">
+        </form>
       <p>This is my personal project for Turing: Module 3. All photos are from my travels unless otherwise noted</p>
+    </div>
   </div>
 </div>

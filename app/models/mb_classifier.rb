@@ -1,3 +1,6 @@
+require 'base64'
+require 'nokogiri'
+
 class MBClassifier
   attr_reader :connection,
               :introversion_classification,
@@ -16,7 +19,7 @@ class MBClassifier
               :age_parsed
 
   def initialize
-    @connection = Faraday.new(:url => "http://uclassify.com/") do |faraday|
+    @connection = Faraday.new(:url => "http://api.uclassify.com") do |faraday|
       faraday.request  :url_encoded
       faraday.response :logger
       faraday.adapter  Faraday.default_adapter
@@ -28,7 +31,7 @@ class MBClassifier
     cleaned_tweets = tweets.each do |tweet|
       tweet.gsub!(/(?:f|ht)tps?:\/[^\s]+/, '')
     end
-    #remove @user
+    #remove @users
     cleaned_tweets.each do |tweet|
       tweet.gsub!(/@(\w+)/, '')
     end
@@ -43,64 +46,70 @@ class MBClassifier
     cleaned_tweets
   end
 
+  def create_XML(text, username, classifier)
+    encoded_text = Base64.encode64(text.join(' '))
+    "<?xml version=\"1.0\" encoding=\"utf-8\" ?>
+    <uclassify xmlns=\"http://api.uclassify.com/1/RequestSchema\" version=\"1.01\">
+      <texts>
+        <textBase64 id=\"text_1\">#{encoded_text}</textBase64>
+      </texts>
+      <readCalls readApiKey=\"pFfqHiHLgy7YXQAome6DMprkehY\">
+        <classify id=\"call_1\" username=\"#{username}\" classifierName=\"#{classifier}\" textId=\"text_1\"/>
+      </readCalls>
+    </uclassify>"
+  end
+
   def classify_introversion(text)
     #extraverison vs. introvesion
-    parsed = URI.encode("browse/prfekt/Myers Briggs Attitude/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'prfekt', 'Myers Briggs Attitude')
     response.body
   end
 
   def classify_intuition(text)
     #Intuition vs. sensing
-    parsed = URI.encode("browse/prfekt/Myers Briggs Perceiving Function/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'prfekt', 'Myers Briggs Perceiving Function')
     response.body
   end
 
   def classify_thinking(text)
     #Thinking vs. feeling
-    parsed = URI.encode("browse/prfekt/Myers Briggs Judging Function/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'prfekt', 'Myers Briggs Judging Function')
     response.body
   end
 
   def classify_judging(text)
     #Judging vs perceiving
-    parsed = URI.encode("browse/prfekt/Myers Briggs Lifestyle/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'prfekt', 'Myers Briggs Lifestyle')
     response.body
   end
 
   def classify_sentiment(text)
     #Overall sentiment
-    parsed = URI.encode("browse/prfekt/Mood/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'prfekt', 'Mood')
     response.body
   end
 
   def classify_main_topics(text)
     #Main topics
-    parsed = URI.encode("browse/uClassify/Topics/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'uClassify', 'Topics')
     response.body
   end
 
   def classify_age(text)
     #Age range of person
-    parsed = URI.encode("browse/uClassify/Ageanalyzer/ClassifyText?readkey=pFfqHiHLgy7YXQAome6DMprkehY&text=#{text}&version=1.01&output=json")
-    response = @connection.get parsed
+    response = @connection.post '', create_XML(text, 'uClassify', 'Ageanalyzer')
     response.body
   end
 
   def categorize_user(user)
     grabbing_data_from_apis(user)
-    parsing_data_from_apis
-    assigning_data_to_user(user)
+    parsing_data_from_apis(user)
   end
 
   def grabbing_data_from_apis(user)
     classifier                     = MBClassifier.new
     cleaned_tweets                 = classifier.clean_tweets(user.tweets.map(&:tweet))
+
     @introversion_classification   = classifier.classify_introversion(cleaned_tweets)
     @intuition_classification      = classifier.classify_intuition(cleaned_tweets)
     @thinking_classification       = classifier.classify_thinking(cleaned_tweets)
@@ -110,48 +119,46 @@ class MBClassifier
     @age_classification            = classifier.classify_age(cleaned_tweets)
   end
 
-  def parsing_data_from_apis
-    @introversion_parsed           = JSON.parse(introversion_classification)
-    @intuition_parsed              = JSON.parse(intuition_classification)
-    @thinking_parsed               = JSON.parse(thinking_classification)
-    @judging_parsed                = JSON.parse(judging_classification)
-    @sentiment_parsed              = JSON.parse(sentiment_classification)
-    @topic_parsed                  = JSON.parse(topic_classification)
-    @age_parsed                    = JSON.parse(age_classification)
-  end
+  def parsing_data_from_apis(user)
 
-  def assigning_data_to_user(user)
-    user.introversion             = (introversion_parsed['cls1']['Introversion']) * 100
-    user.extraversion             = (introversion_parsed['cls1']['Extraversion']) * 100
-    user.intuition                = (intuition_parsed['cls1']['iNtuition']) * 100
-    user.sensing                  = (intuition_parsed['cls1']['Sensing']) * 100
-    user.thinking                 = (thinking_parsed['cls1']['Thinking']) * 100
-    user.feeling                  = (thinking_parsed['cls1']['Feeling']) * 100
-    user.judging                  = (judging_parsed['cls1']['Judging']) * 100
-    user.perceiving               = (judging_parsed['cls1']['Perceiving']) * 100
-    user.negative_sentiment       = (sentiment_parsed['cls1']['upset']) * 100
-    user.positive_sentiment       = (sentiment_parsed['cls1']['happy']) * 100
+    user.introversion             = grab_values_from_xml_document((Nokogiri::XML(introversion_classification)), 3).to_f * 100
+    user.extraversion             = grab_values_from_xml_document((Nokogiri::XML(introversion_classification)), 1).to_f * 100
+    user.intuition                = grab_values_from_xml_document((Nokogiri::XML(intuition_classification)),    3).to_f * 100
+    user.sensing                  = grab_values_from_xml_document((Nokogiri::XML(intuition_classification)),    1).to_f * 100
+    user.thinking                 = grab_values_from_xml_document((Nokogiri::XML(thinking_classification)),     3).to_f * 100
+    user.feeling                  = grab_values_from_xml_document((Nokogiri::XML(thinking_classification)),     1).to_f * 100
+    user.judging                  = grab_values_from_xml_document((Nokogiri::XML(judging_classification)),      1).to_f * 100
+    user.perceiving               = grab_values_from_xml_document((Nokogiri::XML(judging_classification)),      3).to_f * 100
 
-    user.topic_arts               = (topic_parsed['cls1']['Arts']) * 100
-    user.topic_business           = (topic_parsed['cls1']['Business']) * 100
-    user.topic_computers          = (topic_parsed['cls1']['Computers']) * 100
-    user.topic_games              = (topic_parsed['cls1']['Games']) * 100
-    user.topic_health             = (topic_parsed['cls1']['Health']) * 100
-    user.topic_home               = (topic_parsed['cls1']['Home']) * 100
-    user.topic_recreation         = (topic_parsed['cls1']['Recreation']) * 100
-    user.topic_science            = (topic_parsed['cls1']['Science']) * 100
-    user.topic_society            = (topic_parsed['cls1']['Society']) * 100
-    user.topic_sports             = (topic_parsed['cls1']['Sports']) * 100
+    user.negative_sentiment       = grab_values_from_xml_document((Nokogiri::XML(sentiment_classification)),    3).to_f * 100
+    user.positive_sentiment       = grab_values_from_xml_document((Nokogiri::XML(sentiment_classification)),    1).to_f * 100
 
-    user.age_group1               = (age_parsed['cls1']['13-17']) * 100
-    user.age_group2               = (age_parsed['cls1']['18-25']) * 100
-    user.age_group3               = (age_parsed['cls1']['26-35']) * 100
-    user.age_group4               = (age_parsed['cls1']['36-50']) * 100
-    user.age_group5               = (age_parsed['cls1']['51-65']) * 100
-    user.age_group6               = (age_parsed['cls1']['65-100']) * 100
+    user.topic_arts               = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 1).to_f  * 100
+    user.topic_business           = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 3).to_f  * 100
+    user.topic_computers          = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 5).to_f  * 100
+    user.topic_games              = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 7).to_f  * 100
+    user.topic_health             = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 9).to_f  * 100
+    user.topic_home               = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 11).to_f * 100
+    user.topic_recreation         = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 13).to_f * 100
+    user.topic_science            = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 15).to_f * 100
+    user.topic_society            = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 17).to_f * 100
+    user.topic_sports             = grab_values_from_xml_document((Nokogiri::XML(topic_classification)), 19).to_f * 100
+
+    user.age_group1               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 1).to_f  * 100
+    user.age_group2               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 3).to_f  * 100
+    user.age_group3               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 5).to_f  * 100
+    user.age_group4               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 7).to_f  * 100
+    user.age_group5               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 9).to_f  * 100
+    user.age_group6               = grab_values_from_xml_document((Nokogiri::XML(age_classification)), 11).to_f * 100
 
     user.save
     user
+  end
+
+  private
+
+  def grab_values_from_xml_document(doc, position)
+    doc.children.children.children.children.children[position].attributes["p"].value
   end
 
 end

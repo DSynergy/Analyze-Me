@@ -6,6 +6,7 @@ gem 'omniauth-twitter'
 gem 'faraday'
 gem 'twitter'
 gem 'sucker_punch'
+gem 'nokogiri'
 
 gem 'rails', '4.2.0'
 gem 'pg'

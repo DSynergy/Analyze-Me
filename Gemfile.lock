@@ -265,6 +265,7 @@ DEPENDENCIES
   jquery-rails
   koala
   neat
+  nokogiri
   omniauth-facebook
   omniauth-github
   omniauth-twitter

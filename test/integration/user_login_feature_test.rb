@@ -27,6 +27,6 @@ class UserLoginTest < ActiveSupport::TestCase
   # test 'a user can login with facebook' do
   #
   # end
-  #
+
 
 end

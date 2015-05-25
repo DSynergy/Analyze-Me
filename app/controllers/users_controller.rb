@@ -6,8 +6,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.find_or_create_by(id: current_user.id)
-    MBClassifier.new.categorize_user(user)
-    MBResult.new.calculate_personality(user)
+    user.calculate_personality
 
     if user.personality
       @user = user

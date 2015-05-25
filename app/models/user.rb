@@ -4,6 +4,13 @@ class User < ActiveRecord::Base
   has_many :tweets
   belongs_to :personality
 
+  def calculate_personality
+    MBClassifier.new.categorize_user(self)
+
+    type = "#{attitude}#{perception}#{emotional}#{preference}"
+    update_attributes(personality: Personality.find_by(MBPT: type))
+  end
+
   def self.find_or_create_from_facebook(data)
     provider = Provider.find_or_create_by(provider: data.provider)
     user = User.find_or_create_by(uid: data.uid)
@@ -43,6 +50,40 @@ class User < ActiveRecord::Base
       end
     user.save
     user
+  end
+
+  private
+
+  def attitude
+    if introversion > extraversion
+      'I'
+    else
+      'E'
+    end
+  end
+
+  def perception
+    if intuition > sensing
+      'N'
+    else
+      'S'
+    end
+  end
+
+  def emotional
+    if thinking > feeling
+      'T'
+    else
+      'F'
+    end
+  end
+
+  def preference
+    if judging > perceiving
+      'J'
+    else
+      'P'
+    end
   end
 
 end

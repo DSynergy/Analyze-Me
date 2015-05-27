@@ -6,12 +6,16 @@
       <%= image_tag(user.image) if user.image%>
     </div>
     <div class="card-header">
-      <h4><%=user.personality.MBPT%></h4>
+      <% if user.personality %>
+        <h4><%=user.personality.MBPT %></h4>
       <%= user.name if user.name%> - <%= user.nickname if user.nickname %>
+      <% end %>
     </div>
     <div class="card-copy">
-      INTJ's:
-      <%= user.personality.short_description if user.personality.short_description %>
+      <% if user.personality %>
+        <h4><%= user.personality.MBPT %>s: </h4>
+        <%= user.personality.short_description if user.personality.short_description %>
+      <% end %>
     </div>
   </div>
   <% end %>

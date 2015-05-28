@@ -16,3 +16,5 @@
 /config/application.yml
 
 coverage
+
+postgres backup for analyze-me

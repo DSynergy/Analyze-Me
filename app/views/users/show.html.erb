@@ -13,8 +13,11 @@
     <% if @user.personality %>
       <h1>You are an <%= @user.personality.MBPT %>! - <%= @user.personality.catchphrase %></h1>
         <%= form_for User.new do |form| %>
-        <h1><%= form.submit "Analyze Again?!"%></h1>
+        <h1><%= form.submit "More Tweets? Analyze Again!"%></h1>
       <% end %>
+      <form action="http://www.humanmetrics.com/cgi-win/jtypes2.asp">
+          <input type="submit" value="Disagree? Take a Free Test to Compare", class="dash-button">
+      </form>
       <br>
       <div class="modal">
         <label for="modal-1">

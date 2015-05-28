@@ -1,23 +1,19 @@
 <div class="cards">
 
-  <div class="card">
-    <% @users.each do |user| %>
-    <div class="card-image">
-      <%= image_tag(user.image) if user.image%>
-    </div>
-    <div class="card-header">
-      <% if user.personality %>
-        <h4><%=user.personality.MBPT %></h4>
-      <%= user.name if user.name%> - <%= user.nickname if user.nickname %>
+  <% @users.each do |user| %>
+    <% if user.image && user.personality %>
+      <div class="card">
+          <div class="card-image">
+            <%= image_tag(user.image)%>
+          </div>
+          <div class="card-header">
+            <h4><%= user.name if user.name %>:<%= user.nickname if user.nickname %> - <%= user.personality.MBPT %> </h4>
+          </div>
+          <div class="card-copy">
+            <p><%= user.personality.short_description if user.personality.short_description %></p>
+          </div>
+      </div>
       <% end %>
-    </div>
-    <div class="card-copy">
-      <% if user.personality %>
-        <h4><%= user.personality.MBPT %>s: </h4>
-        <%= user.personality.short_description if user.personality.short_description %>
-      <% end %>
-    </div>
-  </div>
-  <% end %>
+    <% end %>
 
 </div>

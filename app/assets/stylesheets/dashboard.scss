@@ -70,11 +70,10 @@
     margin: auto;
     position: absolute;
     text-align: center;
-    top: 40%;
+    top: 50%;
     z-index: 999;
 
     .hero-copy {
-      text-align: center;
 
       .sign-up {
         @include button(flat, $action-color);
@@ -87,9 +86,11 @@
       }
 
       h1 {
+      text-align: center;
         font-style: italic;
-        font-size: 10em;
+        font-size: 6em;
         margin-bottom: 0.5em;
+        margin-top: 0.5em;
 
         @include media($large-screen) {
           font-size: 10em;
@@ -103,7 +104,7 @@
 
         @include media($large-screen) {
           font-size: 1.1em;
-          max-width: 40%;
+          max-width: 75%;
         }
       }
     }

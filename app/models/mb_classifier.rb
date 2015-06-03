@@ -26,6 +26,11 @@ class MBClassifier
     end
   end
 
+  def categorize_user(user)
+    grabbing_data_from_apis(user)
+    parsing_data_from_apis(user)
+  end
+
   def clean_tweets(tweets)
     tweets.map do |tweet|
       tweet.gsub!(/(?:f|ht)tps?:\/[^\s]+/, '')
@@ -33,11 +38,6 @@ class MBClassifier
       tweet.gsub!(/\n/, "")
       tweet.gsub('"', "")
     end
-  end
-
-  def categorize_user(user)
-    grabbing_data_from_apis(user)
-    parsing_data_from_apis(user)
   end
 
   def grabbing_data_from_apis(user)

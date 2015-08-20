@@ -56,8 +56,8 @@ class MBClassifier
 
     user.introversion             = grab_values_from_xml_document((Nokogiri::XML(introversion_classification)), 3).to_f * 100
     user.extraversion             = grab_values_from_xml_document((Nokogiri::XML(introversion_classification)), 1).to_f * 100
-    user.intuition                = grab_values_from_xml_document((((Nokogiri::XML(intuition_classification)),    3).to_f) * 100) + 25 # correction for API bias towards sensing
-    user.sensing                  = grab_values_from_xml_document((((Nokogiri::XML(intuition_classification)),    1).to_f) * 100) - 25 # correction for API bias towards sensing
+    user.intuition                = grab_values_from_xml_document((Nokogiri::XML(intuition_classification)),    3).to_f * 100 + 25 # correction for API bias towards sensing
+    user.sensing                  = grab_values_from_xml_document((Nokogiri::XML(intuition_classification)),    1).to_f * 100 - 25 # correction for API bias towards sensing
     user.thinking                 = grab_values_from_xml_document((Nokogiri::XML(thinking_classification)),     3).to_f * 100
     user.feeling                  = grab_values_from_xml_document((Nokogiri::XML(thinking_classification)),     1).to_f * 100
     user.judging                  = grab_values_from_xml_document((Nokogiri::XML(judging_classification)),      1).to_f * 100

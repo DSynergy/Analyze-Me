@@ -6,75 +6,45 @@
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link">
-          <a href="/background">Background</a>
-        </li>
-        <li class="nav-link">
-          <a href="/about">About</a>
-        </li>
-        <li class="nav-link more">
-          <a href="#">The APIs</a>
+        <li class="nav-link"><a href="/background">Background</a></li>
+        <li class="nav-link"><a href="/about">About</a></li>
+        <li class="nav-link more"><a href="#">The APIs</a>
           <ul class="submenu">
-            <li>
-              <a href="/apis/myers-briggs">The Myers-Briggs APIs</a>
-            </li>
-            <li>
-              <a href="/apis/sentiment">The Sentiment Analyzer</a>
-            </li>
-            <li>
-              <a href="/apis/maturity">The Maturity Analyzer</a>
-            </li>
-            <li>
-              <a href="/apis/topic">The Topic Analyzer</a>
-            </li>
+            <li><a href="/apis/myers-briggs">The Myers-Briggs APIs</a></li>
+            <li><a href="/apis/sentiment">The Sentiment Analyzer</a></li>
+            <li><a href="/apis/maturity">The Maturity Analyzer</a></li>
+            <li><a href="/apis/topic">The Topic Analyzer</a></li>
           </ul>
-        <li >
-          <a href="/types/type">The 16 types</a>
-        </li>
-        <li class="nav-link more">
-          <a href="#">The Types Indepth</a>
+        <li class="nav-link"><a href="/types/type">The 16 types</a></li>
+        <li class="nav-link more"><a href="#">The Types Indepth</a>
           <ul class="submenu">
-            <li><%= link_to "INTJ-The Mastermind",types_INTJ_path %>
-            </a>
-          </li>
-          <li><%= link_to "INFJ-The Counselor", types_INFJ_path %>
-          </a>
+            <li><%= link_to "INTJ-The Mastermind",types_INTJ_path %> </a></li>
+            <li><%= link_to "INFJ-The Counselor", types_INFJ_path %> </a></li>
+            <li><%= link_to "ISTJ-The Pragmatist",types_ISTJ_path %> </a></li>
+            <li><%= link_to "ISFJ-The Nurturer",  types_ISFJ_path %> </a></li>
+            <li><%= link_to "INFP-The Romantic",  types_INFP_path %> </a></li>
+            <li><%= link_to "INTP-The Thinker",   types_INTP_path %> </a></li>
+            <li><%= link_to "ISTP-The Mechanic",  types_ISTP_path %> </a></li>
+            <li><%= link_to "ISFP-The Peacemaker",types_ISFP_path %> </a></li>
+            <li><%= link_to "ESTP-The Promoter",  types_ESTP_path %> </a></li>
+            <li><%= link_to "ESFP-The Performer", types_ESFP_path %> </a></li>
+            <li><%= link_to "ENFP-The Inspirer",  types_ENFP_path %> </a></li>
+            <li><%= link_to "ENTP-The Visionary", types_ENTP_path %> </a></li>
+            <li><%= link_to "ESTJ-The Supervisor",types_ESTJ_path %> </a></li>
+            <li><%= link_to "ESFJ-The Caregiver", types_ESFJ_path %> </a></li>
+            <li><%= link_to "ENFJ-The Giver",     types_ENFJ_path %> </a></li>
+            <li><%= link_to "ENTJ-The Executive", types_ENTJ_path %> </a></li>
+          </ul>
         </li>
-        <li><%= link_to "ISTJ-The Pragmatist",types_ISTJ_path %>
-        </a>
-      </li>
-      <li><%= link_to "ISFJ-The Nurturer", types_ISFJ_path %>
-      </a>
-    </li>
-    <li><%= link_to "INFP-The Romantic", types_INFP_path %>
-    </a>
-  </li>
-  <li><%= link_to "INTP-The Thinker", types_INTP_path %>
-  </a>
-</li>
-<li><%= link_to "ISTP-The Mechanic", types_ISTP_path %>
-</a>
-</li>
-<li><%= link_to "ISFP-The Peacemaker",types_ISFP_path %>
-</a>
-</li>
-<li><%= link_to "ESTP-The Promoter", types_ESTP_path %>
-</a>
-</li>
-<li><%= link_to "ESFP-The Performer", types_ESFP_path %>
-</a>
-</li>
-<li><%= link_to "ENFP-The Inspirer", types_ENFP_path %>
-</a>
-</li>
-<li><%= link_to "ENTP-The Visionary", types_ENTP_path %>
-</a>
-</li>
-<li><%= link_to "ESTJ-The Supervisor",types_ESTJ_path %>
-</a>
-</li>
-<li><%= link_to "ESFJ-The Caregiver", types_ESFJ_path %>
-</a>
-</li>
-<li><%= link_to "ENFJ-The Giver", types_ENFJ_path %>
-</a></li><li><%= link_to "ENTJ-The Executive", types_ENTJ_path %></a> </li></ul></li></ul></nav><div class="navigation-tools"><% if current_user %><%= link_to "Your Profile", user_path(current_user.id), class: "sign-up" %><%= link_to "Log Out", logout_path, method: :destroy, class: "sign-up" %><% end %></div></div></header>
+      </ul>
+    </nav>
+
+    <div class="navigation-tools">
+      <% if current_user %>
+        <%= link_to "Your Profile", user_path(current_user.id), class: "sign-up" %>
+        <%= link_to "Log Out", logout_path, method: :destroy, class: "sign-up" %>
+      <% else %>
+<li class="nav-link">Twitter Sign in</li>      <% end %>
+    </div>
+  </div>
+</header>

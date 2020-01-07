@@ -1,54 +1,62 @@
 <div class="side-image">
-  <div class="images-wrapper">
+  <div class="images-wrapper"></div>
+  <div class="side-image-content">
+    <h4>Hey baby, what's your type?</h4>
+    <h1>Analyze Me</h1>
+    <h4>Instructions</h4>
+    <h4>THIS APP WAS WRITTEN IN 2015 AND TWITTER NO LONGER ALLOWS API ACCESS TO TWEETS!</h4>
+    <hr>
+    <p>Signing in with Twitter, will allow the application to access your recent 100 tweets. Keep in mind, this is only as accurate as your posts are a reflection of the real you.</p>
+    <p>Once the application has access to your tweets, it is time to to kick your feet up on that leather couch and click Analyze-Me.</p>
+    <p>
+      <i>Now the gauntlet happens.</i>
+      Your tweets are thrown through the ringer, as they are processed by 7 different api analyzers:
+      <strong>Your tweets are analyzed by writing style and word choice to return your Myers-Briggs personality type, as well as your general mood, general age-range or maturity of your language and the breakdown of topics.</strong>
+    </p>
+    <p>I can't attest for 100 percent veracity of your results, but hey
+      <b>at least it is cheaper than therapy, am I right?</b>
+    </p>
+    <h4>But Dustin...why?</h4>
+    <p>The inspiration for this app comes from the interest I have in the differences and similarities between people with different types of personalities.</p>
+    <p>Understanding someone's personality allows for better and more substantial interactions. Why stop there though? Let's take it to the next level.</p>
+    <p>This app is for anyone interested in personality types and how they are related to how we express ourselves; hopefully, this app will provide some insight into how you portray yourself online as well as how the 16 different types differ in this
+      regard.</p>
+    <h4>Integrations</h4>
+    <p>This app uses the Twitter OAuth provider to analyze your tweets. Hopefully, in the future I will extend this to other media sources such as Facebook.</p>
+    <h4>APIs</h4>
 
-  </div>
-    <div class="side-image-content">
-      <h4>Hey baby, what's your type?</h4>
-      <h1>Analyze Me</h1>
-      <h4>Instructions</h4>
-        <p>Signing in with Twitter, will allow the application to access your recent 100 tweets.
-          Keep in mind, this is only as accurate as your posts are a reflection of the real you.</p>
-        <p>Once the application has access to your tweets, it is time to to kick your feet up on that leather couch and click Analyze-Me.</p>
-        <p>
-          <i>Now the gauntlet happens.</i> Your tweets are thrown through the ringer, as they are processed by 7 different api analyzers:
-          <strong>Your tweets are analyzed by writing style and word choice to return your Myers-Briggs personality type, as well as your general mood, general age-range or maturity of your language and the breakdown of topics.</strong>
-        </p>
-        <p>I can't attest for 100 percent veracity of your results, but hey <b>at least it is cheaper than therapy, am I right?</b></p>
-      <h4>But Dustin...why?</h4>
-        <p>The inspiration for this app comes from the interest I have in the differences and similarities between people with different types of personalities.</p>
-        <p>Understanding someone's personality allows for better and more substantial interactions. Why stop there though? Let's take it to the next level.</p>
-        <p>This app is for anyone interested in personality types and how they are related to how we express ourselves;
-        hopefully, this app will provide some insight into how you portray yourself online as well as how the 16 different types differ in this regard.</p>
-      <h4>Integrations</h4>
-      <p>This app uses the Twitter OAuth provider to analyze your tweets. Hopefully, in the future I will extend this to other media sources such as Facebook.</p>
-      <h4>APIs</h4>
+    <p>The app uses a gauntlet of 7 APIs to classify content. Mostly based off the work of Mattias Östmar.</p>
 
-      <p>The app uses a gauntlet of 7 APIs to classify content. Mostly based off the work of Mattias Östmar.</p>
+    <ul>
+      More info can be found here:
+      <li>
+        <a href="/apis/myers-briggs">The Myer's-Briggs Apis</a>
+      </li>
+      <li>
+        <a href="/apis/sentiment">The Sentiment Analyzer</a>
+      </li>
+      <li>
+        <a href="/apis/maturity">The Maturity Analyzer</a>
+      </li>
+      <li>
+        <a href="/apis/topic">The Topic Analyzer</a>
+      </li>
+    </ul>
+    <br>
+    <hr>
+    <p>Note: Currently, you can also sign in with Facebook, but I am waiting on permission from the Facebook dev team to get access to a user's posts (even if you sign-in and say it is okay). Analzying facebook posts will be the next phase.</p>
 
-      <ul>
-        More info can be found here:
-        <li><a href="/apis/myers-briggs">The Myer's-Briggs Apis</a></li>
-        <li><a href="/apis/sentiment">The Sentiment Analyzer</a></li>
-        <li><a href="/apis/maturity">The Maturity Analyzer</a></li>
-        <li><a href="/apis/topic">The Topic Analyzer</a></li>
-      </ul>
-      <br>
-      <hr>
-      <p>Note: Currently, you can also sign in with Facebook, but I am waiting on permission from the Facebook dev team to get access to a user's posts (even if you sign-in and say it is okay). Analzying facebook posts will be the next phase.</p>
-
-    </div>
   </div>
 </div>
-
+</div>
 
 <style>
 .side-image .images-wrapper {
-    background: url(<%= image_path("background_images/#{randomized_background_image}.JPG")%>) no-repeat;
-    display: table-cell;
-    width: 33.3333%;
-    background-position: center bottom;
-    background-size: cover;
-    border-right: 1px solid rgba(38, 74, 38, 0.2);
+  background: url(<%= image_path("background_images/#{randomized_background_image}.JPG")%>) no-repeat;
+  display: table-cell;
+  width: 33.3333%;
+  background-position: center bottom;
+  background-size: cover;
+  border-right: 1px solid rgba(38, 74, 38, 0.2);
 }
-
 </style>

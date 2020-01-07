@@ -45,7 +45,7 @@ group :development, :test do
   gem 'vcr'
   gem 'byebug'
   gem 'better_errors'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.1'
   gem 'spring'
   gem 'pry'
   gem 'capybara'

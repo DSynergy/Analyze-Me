@@ -72,6 +72,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    crass (1.0.5)
     debug_inspector (0.0.2)
     docile (1.1.5)
     equalizer (0.0.11)
@@ -103,7 +104,8 @@ GEM
       addressable
       faraday
       multi_json
-    loofah (2.0.2)
+    loofah (2.4.0)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
